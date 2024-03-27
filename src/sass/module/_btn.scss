@@ -1,0 +1,200 @@
+@use "global" as *;
+
+.btn{
+  display: inline-block;
+  position: relative;  
+  margin-bottom:  rem(4);  
+  cursor: pointer;
+}
+
+.btn span{
+  position: relative;
+  display: inline-block;
+  background-color: #408F95;
+  color: $white;
+  padding:  rem(16)  rem(88) rem(16)  rem(40);
+  font-family: $gotu;
+  font-size:   rem(14);
+  line-height: calc(22 /14 );
+  text-align: center;
+  z-index: 2;
+  transition: all .3s;
+  border:  rem(1) solid $green;
+}
+
+.btn span:hover{
+  background-color: #fff;
+  color: $green;
+}
+
+.btn::before{
+  position: absolute;
+  content:"";
+  display: block;
+  width:  rem(202);
+  height:  rem(55);
+  border:  rem(1) solid $green;
+  top:  rem(4);
+  left:  rem(4);
+}
+
+.btn span::after{
+  position: absolute;
+  top: 50%;
+  right:  rem(40);
+  transform: translateY(-50%);
+  display: block;
+  content:"";
+  background-color: #fff;
+  width:  rem(40);
+  height:  rem(1);
+  transition: all .3s;
+
+}
+
+.btn span::before{
+  position: absolute;
+  top: 45%;
+  right:  rem(39);
+  transform: translateY(-50%) rotate(45deg);
+  display: block;
+  content:"";
+  background-color: #fff;
+  width:  rem(8);
+  height:  rem(1);  
+  transition: all .3s;
+
+}
+
+.btn:hover span::after{
+  position: absolute;
+  top: 50%;
+  right:  rem(40);
+  transform: translateY(-50%);
+  display: block;
+  content:"";
+  background-color: #408F95;
+  width:  rem(40);
+  height:  rem(1);
+}
+
+.btn:hover span::before{
+  position: absolute;
+  top: 45%;
+  right:  rem(40);
+  transform: translateY(-50%) rotate(45deg);
+  display: block;
+  content:"";
+  background-color: $green;
+  width:  rem(8);
+  height:  rem(1);  
+}
+
+
+
+
+
+// .c-btn {
+//   position: relative;
+//   background: $white;
+//   border: 1px solid $green;
+//   color: #fff;
+//   display: inline-block;
+//   font-family: $gotu;
+//   font-size:   rem(14);
+//   line-height: calc(22 /14 );
+//   padding:  rem(16)  rem(88) rem(16)  rem(40);
+//   text-align: center;
+// }
+
+// .c-btn.slide::before{
+//   position: absolute;
+//   content:"";
+//   display: block;
+//   width:  rem(210);
+//   height:  rem(65);
+//   border:  rem(1) solid $green;
+//   top:  rem(4);
+//   left:  rem(4);
+//   z-index: 2;
+// }
+
+// .c-btn.slide {
+//   background: $green;
+//   color: $white;
+//   overflow: hidden;
+//   position: relative;
+//   z-index: 1;
+// }
+// .c-btn.slide::after {
+//   background: $white;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   content: '';
+//   width: 100%;
+//   height: 100%;
+//   transform: scale(0, 1);
+//   transform-origin: left top;
+//   transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+//   z-index: -1;
+// }
+// .c-btn.slide:hover {
+//   color: $green;
+// }
+// .c-btn.slide:hover::after {
+//   transform: scale(1, 1);
+// }
+ 
+
+// .c-btn::after{
+//   position: absolute;
+//   top: 50%;
+//   right:  rem(40);
+//   transform: translateY(-50%);
+//   display: block;
+//   content:"";
+//   background-color: #fff;
+//   width:  rem(40);
+//   height:  rem(1);
+//   transition: all .3s;
+
+// }
+
+// .c-btn::before{
+//   position: absolute;
+//   top: 45%;
+//   right:  rem(39);
+//   transform: translateY(-50%) rotate(45deg);
+//   display: block;
+//   content:"";
+//   background-color: #fff;
+//   width:  rem(8);
+//   height:  rem(1);  
+//   transition: all .3s;
+
+// }
+
+// .btn:hover span::after{
+//   position: absolute;
+//   top: 50%;
+//   right:  rem(40);
+//   transform: translateY(-50%);
+//   display: block;
+//   content:"";
+//   background-color: #408F95;
+//   width:  rem(40);
+//   height:  rem(1);
+// }
+
+// .btn:hover span::before{
+//   position: absolute;
+//   top: 45%;
+//   right:  rem(40);
+//   transform: translateY(-50%) rotate(45deg);
+//   display: block;
+//   content:"";
+//   background-color: $green;
+//   width:  rem(8);
+//   height:  rem(1);  
+// }

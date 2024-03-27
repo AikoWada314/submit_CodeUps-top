@@ -1,0 +1,155 @@
+@use 'global' as *;
+
+.top-contact {
+  position: relative;
+  padding:rem(80) 0  rem(100) 0;
+  @include mq('md'){
+    padding:  rem(140) 0  rem(160) 0;
+  }
+}
+
+.top-contact__inner::after{
+  position: absolute;
+  content: "";
+  display: block;
+  background: url(../images/common/top-contact-mask.png) no-repeat top / contain;
+  top:  rem(115);
+  right: calc(50% - min(48.4vw,  rem(662)));
+  width:  rem(109);
+  height:  rem(50);
+  z-index: 4;
+
+  @include mq('md'){
+  top:  rem(107);
+  right: calc(50% - min(48.4vw,  rem(662)));
+  width:  rem(301);
+  height:  rem(138);
+  }
+}
+
+
+.top-contact__inner.inner {
+  padding-left:  rem(22);
+  padding-right:  rem(22);
+  margin-inline: auto;
+  @include mq('md'){
+  padding-left: rem(25) ;
+  padding-right:  rem(25);
+  }
+
+}
+
+.top-contact__content{
+  filter:drop-shadow(rem(0)  rem(4)  rem(4) rgba(0, 0, 0, 0.25)) ;
+  @include mq('md'){
+    filter:none;
+    box-shadow:rem(0)  rem(4)  rem(4) rgba(0, 0, 0, 0.25) ;
+    display: flex;
+    align-items: center;
+    padding-top:  rem(80);
+    padding-bottom:  rem(80);
+  }
+}
+.top-contact__top {
+  @include mq('md'){
+    width: 52.962%;
+    border-right:  rem(1) solid $green;
+    padding-left:  rem(50);
+    padding-right:  rem(50);
+  }
+}
+
+.top-contact__logo {
+  padding-bottom:  rem(6);
+  border-bottom:  rem(1) solid $green;
+}
+
+.top-contact__logo img{
+  margin-inline: auto;
+  width:  rem(174);
+  height:  rem(65);
+
+  @include mq('md'){
+    width:  rem(200);
+    height:  rem(75);
+  }}
+
+.top-contact__flex {
+  @include mq('md'){
+    margin-top:  rem(24);
+    display: flex;
+    gap:  rem(21);
+  }
+}
+
+.top-contact__info-wrapper {
+  @include mq('md'){
+    width: 33.18%;
+  }
+}
+
+
+
+.top-contact__info {
+  text-align: center;
+  font-size:   rem(16);
+  color: $black;
+  line-height: calc(24 /16 );
+  margin-top:  rem(4);
+  @include mq('md'){
+    text-align-last: left;
+  }
+}
+
+.top-contact__info.top-contact__info--mt{
+  margin-top:  rem(16);
+  @include mq('md'){
+    margin-top:  rem(0);
+  }
+}
+
+.top-contact__map {
+  text-align: center;
+  margin-top:  rem(16);
+  position: relative;
+  aspect-ratio: 295/160;
+  @include mq('md'){
+    width: 62.045%;
+    margin-top:  rem(0);
+  }
+}
+
+.top-contact__map iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.top-contact__bottom {
+  margin-top:  rem(40);
+  @include mq('md'){
+    width: 47.038%;
+    margin-top: 0;
+  }
+}
+
+.top-contact__title {
+
+}
+
+
+.top-contact__text {
+  margin-top:  rem(8);
+  color: $green;
+  font-size:   rem(14);
+  line-height: calc(18 /14 );
+  text-align: center; 
+}
+
+.top-contact__btn {
+  text-align: center;
+  margin-top:  rem(40);
+}

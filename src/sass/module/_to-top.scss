@@ -1,0 +1,59 @@
+@use 'global' as *;
+
+@use 'global' as *;
+
+.to-top{
+  position: fixed;
+  right:  rem(15);
+  bottom:  rem(15);
+  border-radius: 50%;
+  overflow: hidden;
+  border:  rem(1) solid $green;
+  @include mq('md'){
+  right:  rem(20);
+  bottom:rem(20);
+  }
+}
+
+.to-top a{
+  display: block;
+  width:  rem(48);
+  height:  rem(48);
+  background-color: #fff;
+  position: relative;
+  @include mq('md'){
+    width:  rem(80);
+    height:  rem(80);
+  }
+}
+
+.to-top a span::before{
+  background-color: #408F95;
+  content: "";
+  display: block;
+  height:  rem(1);
+  left:  rem(15);
+  position: absolute;
+  top:  rem(13);
+  transform: rotate(135deg);
+  width:  rem(10);
+  @include mq('md'){
+    top:  rem(24);
+    left:  rem(31);
+  }
+}
+
+.to-top a span::after{
+  background-color: #408F95;
+  content: "";
+  display: block;
+  height:  rem(1);
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  width:  rem(28);
+  @include mq('md'){
+    width:  rem(40);
+  }
+}

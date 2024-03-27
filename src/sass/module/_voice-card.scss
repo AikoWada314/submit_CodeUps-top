@@ -1,0 +1,97 @@
+@use 'global' as *;
+
+.voice-card {
+  box-shadow:  rem(2)  rem(2)  rem(4) rgba(0, 0, 0, 0.25);
+  width: 100%;
+  padding:  rem(24) rem(24) rem(24) rem(24);
+  background-color: $white;
+  transition: hover .3s;
+}
+
+.voice-card__link:hover{
+  opacity: 0.7;
+}
+
+.voice-card__top {
+  display: flex;
+  gap:  rem(13);
+  align-items: flex-end;
+  @include mq('md'){
+    gap:  rem(16);
+  }
+}
+
+.voice-card__text-wrapper {
+  width: 50%;
+
+  @include mq('md'){
+    width:58.4745%;
+  }}
+
+.voice-card__meta {
+  @include mq('md'){
+    display: flex;
+  justify-content: space-between;    
+  align-items: flex-end;
+  }
+}
+
+.voice-card__age {
+  color: $black;
+  font-size:   rem(12);
+  line-height: calc(18 /12 );
+}
+
+
+.voice-card__title {
+  margin-top:  rem(4);
+  color: $black;
+  font-weight: 600;
+  padding-bottom:  rem(4);
+  border-bottom:  rem(1) solid $green;
+  font-size:   rem(16);
+  @include mq('md'){
+    font-size:   rem(24);
+  }
+}
+
+
+div.voice-card__img{
+  width: 50%;
+  position: relative;
+  aspect-ratio:151/117 ;
+  @include mq('md'){
+    aspect-ratio: 180/140;
+    width: 38.135%;
+  }
+}
+div.js-inview div.color{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: #408F95;
+}
+div.js-inview img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.voice-card__bottom {
+  margin-top:  rem(16);
+  @include mq('md'){
+    margin-top:  rem(40);
+  }
+
+}
+
+.voice-card__text {
+color: $black;
+font-size:   rem(16);
+line-height: calc(24 /16 );
+}
+

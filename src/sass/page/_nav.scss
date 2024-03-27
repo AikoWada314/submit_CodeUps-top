@@ -1,0 +1,80 @@
+@use 'global' as *;
+
+.nav {
+
+}
+
+.nav__group {
+  display: flex;
+  flex-direction: column;
+  gap:  rem(7);
+  justify-content: center;
+  padding-left:  rem(30);
+  width: 50%;
+
+    @include mq("md"){
+     flex-direction: row;
+     gap:  rem(120);
+    }
+  
+}
+
+.nav__items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:  rem(24);
+}
+
+.nav__item {
+  width: 100%;
+
+}
+
+.nav__link {
+
+}
+
+.nav__icon {
+  position: relative;
+  font-size:   rem(16);
+  color: $white;
+  line-height: calc(18 /16 );
+  display: block;
+  font-weight: $bold;
+  margin-top:  rem(40);
+}
+
+.nav__icon.nav__icon--mt0{
+  @include mq('md'){
+    margin-top: 0;
+  }
+}
+
+.nav__icon::before{
+  position: absolute;
+  top: 0;
+  left:  rem(-22);
+  content:"";
+  display: inline-block;
+  background-image: url(../images/common/hitode.png);
+  width:  rem(18);
+  height:  rem(18);
+  background-size: contain;
+  vertical-align: middle;
+}
+
+.nav__icon.nav__icon--mt0{
+  margin-top: 0;
+}
+
+.nav__child {
+  width: 100%;
+  font-size:   rem(16);
+  color: $white;
+  line-height: calc(18 /16 );
+  display: block;
+  margin-top:  rem(24);
+}
+

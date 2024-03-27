@@ -1,0 +1,57 @@
+@use 'global' as *;
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: rem(90);
+  background-color: rgba(13, 41, 54, 0.68);
+  z-index: 1000;
+  transition:  .3s;
+}
+
+.header.is-color{
+  background-color: #9A9A9A;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+  padding-left: rem(15);
+  padding-right: rem(15);
+
+  @include mq('md'){
+    padding-left: rem(40);
+    padding-right: rem(40);
+  }
+}
+
+.header__logo {
+  height: inherit;
+}
+
+.header__logoLink {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  width:  rem(102);
+  @include mq('md'){
+    width:  rem(133);
+  }
+}
+
+.header__drawer{
+  @include mq('md'){
+    display: none;
+  }
+}
+
+.header__pc-nav{
+  height: inherit;
+  display: none;
+  @include mq('md'){
+    display: block;
+
+  }
+}
