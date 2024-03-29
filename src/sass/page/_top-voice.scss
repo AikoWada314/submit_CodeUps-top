@@ -56,7 +56,7 @@
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(auto-fit, minmax( rem(300), 3fr));
-  gap:  rem(40);
+  gap:  rem(34);
 
   @include mq('md'){
     margin-top:  rem(30);

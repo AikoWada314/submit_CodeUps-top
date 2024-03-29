@@ -13,15 +13,15 @@
   content: "";
   display: block;
   background: url(../images/common/top-contact-mask.png) no-repeat top / contain;
-  top:  rem(115);
-  right: calc(50% - min(48.4vw,  rem(662)));
+  top:  rem(55);
+  right: calc(50% - min(48.4vw,  rem(170)));
   width:  rem(109);
   height:  rem(50);
   z-index: 4;
 
   @include mq('md'){
-  top:  rem(107);
-  right: calc(50% - min(48.4vw,  rem(662)));
+  top:  rem(100);
+  right: calc(50% - min(48.4vw,  rem(668)));
   width:  rem(301);
   height:  rem(138);
   }
@@ -29,8 +29,8 @@
 
 
 .top-contact__inner.inner {
-  padding-left:  rem(22);
-  padding-right:  rem(22);
+  padding-left:  rem(30);
+  padding-right:  rem(30);
   margin-inline: auto;
   @include mq('md'){
   padding-left: rem(25) ;
@@ -51,17 +51,20 @@
   }
 }
 .top-contact__top {
+  padding-right:  rem(10);
+  padding-left:  rem(10);
   @include mq('md'){
-    width: 52.962%;
+    width: 52.963%;
     border-right:  rem(1) solid $green;
     padding-left:  rem(50);
-    padding-right:  rem(50);
+    padding-right:  rem(82);
   }
 }
 
 .top-contact__logo {
   padding-bottom:  rem(6);
   border-bottom:  rem(1) solid $green;
+
 }
 
 .top-contact__logo img{
@@ -114,7 +117,7 @@
   position: relative;
   aspect-ratio: 295/160;
   @include mq('md'){
-    width: 62.045%;
+    width: 62%;
     margin-top:  rem(0);
   }
 }
@@ -133,6 +136,7 @@
   @include mq('md'){
     width: 47.038%;
     margin-top: 0;
+    padding-right:  rem(30);
   }
 }
 

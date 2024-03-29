@@ -55,8 +55,9 @@ div.top-info__img img{
 
 
 .top-info__text-wrapper {
-  margin-top:  rem(24);
+  margin-top:  rem(28);
   @include mq('md'){
+    margin-top:  rem(24);
     margin-top: 0;
     width: 45.5%;
   }
@@ -64,7 +65,7 @@ div.top-info__img img{
 }
 
 .top-info__subTitle {
-  padding-bottom:  rem(4);
+  padding-bottom:  rem(3);
   border-bottom:  rem(1) solid $green;
   font-weight: $bold;
   font-size:   rem(20);

@@ -4,6 +4,10 @@
   background-color: $green;
   padding-top:  rem(48);
   padding-bottom:  rem(56);
+  @include mq('md'){
+    padding-top:  rem(80);
+    padding-bottom:  rem(80);
+  }
 }
 
 .footer__inner {
@@ -19,9 +23,22 @@
 
 .footer__logoLink {
   width:  rem(120);
+  aspect-ratio: 120/45;
 
   @include mq('md'){
+    aspect-ratio: 200/75;
     width:  rem(200);
+  }
+}
+
+.footer__logoLink img{
+  width:  rem(120);
+  height:  rem(45);
+
+  @include mq('md'){
+    aspect-ratio: 200/75;
+    width:  rem(200);
+    height:  rem(75);
   }
 }
 
@@ -31,7 +48,8 @@
   align-items: center;
   gap:  rem(16);
   @include mq('md'){
-    padding-bottom:  rem(5);
+    padding-bottom:  rem(15);
+    gap:  rem(18);
   }
 }
 
@@ -54,8 +72,7 @@
 .footer__nav{
   display: flex;
   @include mq('md'){
-    gap:  rem(120);
-    margin-top:  rem(24);
+    gap:  rem(40);
   }
 }
 
@@ -63,7 +80,7 @@
   display: block;
   margin-top:  rem(40);
   color: $white;
-  font-size:   rem(12);
+  font-size:   rem(11.5);
   line-height: calc(18 /12 );
   font-family: $gotu;
   text-align: center;

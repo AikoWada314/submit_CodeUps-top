@@ -5,18 +5,10 @@
   overflow: hidden;
 
   @include mq('md'){
-    margin-top:  rem(120);
+    margin-top:  rem(0);
+    padding-top:  rem(120);
   }
 }
-
-.top-campaign__inner {
-}
-
-
-.top-campaign__title {
-
-}
-
 
 .top-campaign__items {
   position: relative;

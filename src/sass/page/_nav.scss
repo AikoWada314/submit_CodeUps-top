@@ -9,14 +9,24 @@
   flex-direction: column;
   gap:  rem(7);
   justify-content: center;
-  padding-left:  rem(30);
+  padding-left:  rem(25);
   width: 50%;
 
     @include mq("md"){
      flex-direction: row;
-     gap:  rem(120);
+     gap:  rem(70);
+     padding-left:  rem(22);
+
     }
   
+}
+
+.nav__group.nav__group--ml{
+  padding-left:  rem(35);
+  @include mq('md'){
+    padding-left:  rem(22);
+
+  }
 }
 
 .nav__items {
@@ -25,6 +35,17 @@
   flex-direction: column;
   align-items: center;
   margin-top:  rem(24);
+  @include mq('md'){
+    margin-top:  rem(16);
+  }
+}
+
+.nav__items.nav__items--mt{
+  margin-top:  rem(40);
+  @include mq('md'){
+    margin-top:  rem(16);
+
+  }
 }
 
 .nav__item {
