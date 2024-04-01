@@ -11,7 +11,10 @@
 }
 
 .top-voice__inner {
-
+  max-width:  rem(600);
+  @include mq('md'){
+    max-width: initial;
+  }
 }
 
 .top-voice__inner::after {
@@ -55,7 +58,7 @@
   margin-top:  rem(40);
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax( rem(300), 3fr));
+  grid-template-columns: repeat(auto-fit, minmax( rem(300), 2fr));
   gap:  rem(34);
 
   @include mq('md'){

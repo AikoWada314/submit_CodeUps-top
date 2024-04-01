@@ -12,6 +12,11 @@
 
 .top-about__inner {
   position: relative;
+  max-width:  rem(600);
+
+  @include mq('md'){
+    max-width: initial;
+  }
 }
 
 

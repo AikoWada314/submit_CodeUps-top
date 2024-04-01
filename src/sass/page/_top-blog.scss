@@ -10,12 +10,28 @@
 }
 
 .top-blog__inner.inner {
-  padding-left:  rem(21);
-  padding-right:  rem(21);
+  padding-left:  rem(25);
+  padding-right:  rem(25);
   @include mq('md'){
     padding-left:  rem(25);
     padding-right:  rem(25);
   }
+}
+
+.top-blog__inner::after {
+  display: none;
+
+  @include mq('md'){
+    position: absolute;
+    content: "";
+    display: block;
+    background: url(../images/common/top-blog-mask.png) no-repeat top / contain;
+    top:  rem(18);
+    left: calc(50% - min(48.4vw,  rem(620)));
+    width:  rem(437);
+    height:  rem(201);
+    z-index: 4;
+  }  
 }
 
 .top-blog__background{
@@ -48,7 +64,7 @@
 }
 
 .top-blog__item{
-
+max-width:  rem(400);
 }
 
 
