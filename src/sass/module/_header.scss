@@ -32,6 +32,8 @@
 
 .header__logo {
   height: inherit;
+  position: relative;
+  z-index: 100;
 }
 
 .header__logoLink {

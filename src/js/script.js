@@ -31,15 +31,44 @@ $(window).scroll(function () {
 //ドロワーメニュー
 $(".js-hamburger").click(function () {
   $(".js-sp-nav").toggleClass("is-active");
+  function toggleBodyScroll() {
+    if ($("body").css("overflow") === "hidden") {
+      $("body").css({
+        height: "",
+        overflow: ""
+      });
+    } else {
+      $("body").css({
+        height: "100%",
+        overflow: "hidden"
+      });
+    }
+  }
+
 });
 
 $(function () {
   // ハンバーガーメニュー
   $(".js-hamburger").click(function () {
     $(this).toggleClass("is-active");
-    $("html").toggleClass("is-fixed");
+    toggleBodyScroll();
   });
 });
+
+// bodyのスクロール設定を切り替える関数
+function toggleBodyScroll() {
+  if ($("body").css("overflow") === "hidden") {
+    $("body").css({
+      height: "",
+      overflow: ""
+    });
+  } else {
+    $("body").css({
+      height: "100%",
+      overflow: "hidden"
+    });
+  }
+}
 
 // FVスライダー
 const swiper = new Swiper(".swiper-container1", {

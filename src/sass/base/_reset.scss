@@ -117,3 +117,7 @@ a {
   color: inherit;
   transition: opacity 0.3s;
 }
+
+html.is-fixed{
+  overflow: hidden;
+}

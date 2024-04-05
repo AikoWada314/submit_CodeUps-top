@@ -10,11 +10,13 @@
 }
 
 .top-blog__inner.inner {
-  padding-left:  rem(25);
-  padding-right:  rem(25);
+  max-width:  rem(600);
+
   @include mq('md'){
     padding-left:  rem(25);
     padding-right:  rem(25);
+    max-width:  rem(1129);
+
   }
 }
 
@@ -56,15 +58,17 @@
   margin-top:  rem(24);
   display: grid;
     justify-items: center;
-    grid-template-columns: repeat(auto-fit, minmax( rem(300), 3fr));
     gap:  rem(40);
   @include mq('md'){
-    margin-top:  rem(80);    
+    margin-top:  rem(80);   
+    grid-template-columns: repeat(3,1fr);
+ 
   }
 }
 
 .top-blog__item{
-max-width:  rem(400);
+//  max-width:  rem(600);
+
 }
 
 

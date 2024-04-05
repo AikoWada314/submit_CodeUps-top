@@ -9,6 +9,16 @@
   }
 }
 
+.card__wrapper{
+  height: 100%;
+}
+
+.card__link{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .card__img {
   position: relative;
   aspect-ratio: 280/188;
@@ -29,6 +39,9 @@
 
 .card__content {
   padding:  rem(16);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 
   @include mq('md'){
     padding-top:  rem(24) ;
@@ -45,7 +58,7 @@
   font-weight: 500;
   line-height: calc(24 /16 );
   border-bottom:  rem(1) solid $green ;
-  flex: 1;
+  flex-grow: 1;
 }
 
 .card__text{

@@ -2,11 +2,9 @@
 
 .top-about {
   margin-top:  rem(80);
-  margin-bottom:  rem(70);
   @include mq('md'){
     margin-top:  rem(140);
     position: relative;
-    margin-bottom:  rem(242);
   }
 }
 
@@ -27,18 +25,18 @@
 
 .top-about__img-wrapper {
   position: relative;
-  margin-top:  rem(24);
+  margin-top:  rem(50);
   margin-inline:auto;
   text-align: center;
   @include mq('md'){
-  margin-top:  rem(40);
+  margin-top:  rem(120);
   height: 100%;
   }
 }
 
 .top-about__subImg {
   position: absolute;
-  top:  0;
+  top:  rem(-26);
   left: 0;
   z-index: 2;
   aspect-ratio: 128/194;
@@ -46,6 +44,7 @@
   @include mq('md'){
     aspect-ratio: 400/606;
     max-width:  rem(400);
+    top:  rem(-74);
   }
 }
 
@@ -63,12 +62,10 @@
   position: relative;
   aspect-ratio: 281/186;
   width: 81.45%;
-  top:  rem(30);
 
   @include mq('md'){
     aspect-ratio:880/581 ;
     max-width:  rem(880);
-    top:  rem(80);
   }
 }
 
@@ -143,7 +140,7 @@
 
   @include mq('md'){
     background: url(../images/common/top-about-mask.png) no-repeat top / contain;
-    bottom:  rem(-169);
+    bottom:  rem(-89);
     content: "";
     display: block;
     height: 11.3125rem;

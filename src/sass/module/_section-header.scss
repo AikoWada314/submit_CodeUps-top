@@ -17,9 +17,8 @@
   }
 }
 
-.color-green {
+.section-header__enTitle::first-letter{
   color:$green;
-
 }
 
 .section-header__jaTitle {
@@ -28,6 +27,7 @@
   line-height: calc(18 / 12);
   text-align: center;
   margin-top:  rem(4);
+  font-weight: 400;
   @include mq('md'){
     margin-top:  rem(8);
   }
@@ -39,6 +39,12 @@
   @include mq('md'){
     color: $white;
 
+  }
+}
+
+.section-header__enTitle.section-header__enTitle--white::first-letter{
+  @include mq('md'){
+    color: #DDF0F1;
   }
 }
 

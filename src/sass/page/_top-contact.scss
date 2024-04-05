@@ -2,9 +2,11 @@
 
 .top-contact {
   position: relative;
-  padding:rem(80) 0  rem(100) 0;
-  @include mq('md'){
-    padding:  rem(140) 0  rem(160) 0;
+  // padding:rem(80) 0  rem(100) 0;
+  margin-top:  rem(80);
+@include mq('md'){
+    // padding:  rem(140) 0  rem(160) 0;
+    margin-top:  rem(140);
   }
 }
 
@@ -13,14 +15,14 @@
   content: "";
   display: block;
   background: url(../images/common/top-contact-mask.png) no-repeat top / contain;
-  top:  rem(55);
+  top:  rem(-30);
   right: calc(50% - min(48.4vw,  rem(170)));
   width:  rem(109);
   height:  rem(50);
   z-index: 4;
 
   @include mq('md'){
-  top:  rem(100);
+  top:  rem(-60);
   right: calc(50% - min(48.4vw,  rem(668)));
   width:  rem(301);
   height:  rem(138);
