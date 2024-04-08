@@ -1,8 +1,16 @@
 @use 'global' as *;
 
+.top-price__mt{
+  margin-top:  rem(80);
+  @include mq('md'){
+    margin-top:  rem(140);
+
+  }
+}
+
 .top-price {
-background-color: #DDF0F1;
-padding:  rem(80) 0;
+  background-color: #DDF0F1;
+  padding:  rem(80) 0;
   @include mq('md'){
     position: relative;
     padding:  rem(100) 0;
