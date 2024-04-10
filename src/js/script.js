@@ -71,7 +71,7 @@ function toggleBodyScroll() {
 }
 
 // FVスライダー
-const swiper = new Swiper(".swiper-container1", {
+const swiper = new Swiper(".js-fv-swiper", {
   loop: true,
   effect: "fade",
   speed: 3000,
@@ -82,7 +82,7 @@ const swiper = new Swiper(".swiper-container1", {
 });
 
 // Campaignスライダー
-const swiper2 = new Swiper(".swiper-container2", {
+const swiper2 = new Swiper(".js-campaign-swiper", {
   loop:true, 
   slidesPerView: "auto",
   autoplay: { delay: 2000, },

@@ -27,14 +27,13 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
+
+
   <!-- JavaScript -->
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-  <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script> -->
-  <script defer src="./assets/js/script.js"></script>
   <script src="./assets/js/jquery.inview.min.js"></script>
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script defer src="./assets/js/script.js"></script>
 
 </head>
 
@@ -43,9 +42,10 @@
     <div class="header__inner">
       <h1 class="header__logo">
         <a href="#" class="header__logoLink">
-          <img class="u-mobile" src="./assets/images/common/CodeUps-sp.png" alt="CodeUps" loading="lazy"
-            decoding="async">
-          <img class="u-desktop" src="./assets/images/common/CodeUps.svg" alt="CodeUps" loading="lazy" decoding="async">
+          <picture>
+            <source srcset="./assets/images/common/CodeUps.svg" media="(min-width:768px)">
+            <img src="./assets/images/common/CodeUps-sp.png" alt="CodeUps">
+          </picture>
         </a>
       </h1>
       <div class="header__drawer hamburger js-hamburger">
@@ -172,7 +172,7 @@
   <main>
     <div class="fv">
       <div class="fv_inner">
-        <div class="fv_slider swiper swiper-container swiper-container1">
+        <div class="fv_slider swiper swiper-container js-fv-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <picture>
@@ -209,7 +209,7 @@
       </div>
     </div>
 
-    <section class="top-campaign top-campaign__mt">
+    <section class="top-campaign l-top-campaign">
       <div class="top-campaign__inner inner">
         <div class="top-campaign__title">
           <div class="section-header">
@@ -218,12 +218,12 @@
           </div>
         </div>
 
-        <div class="top-campaign__items">
+        <div class="top-campaign__items cards">
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
-          <div class="swiper swiper-container swiper-container2">
+          <div class="swiper swiper-container js-campaign-swiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide top-campaign__item card">
+              <div class="swiper-slide cards__item card">
                 <div class="card__wrapper">
                   <a href="#" class="card__link">
                     <div class="card__img">
@@ -316,7 +316,7 @@
       </div>
     </section>
 
-    <section class="top-about top-about__mt">
+    <section class="top-about l-top-about">
       <div class="top-about__inner inner">
         <div class="top-about__title">
           <div class="section-header">
@@ -345,11 +345,9 @@
           </div>
         </div>
       </div>
-      <div class="top-about-image__inner--top">
-      </div>
     </section>
 
-    <section class="top-info top-info__mt">
+    <section class="top-info l-top-info">
       <div class="top-info__inner inner">
         <div class="top-info__title">
           <div class="section-header">
@@ -382,8 +380,8 @@
             <h2 class="section-header__jaTitle section-header__jaTitle--white">ブログ</h2>
           </div>
         </div>
-        <ul class="top-blog__items">
-          <li class="top-blog__item blog-card">
+        <ul class="top-blog__items blog-cards">
+          <li class="blog-cards__item blog-card">
             <div class="blog-card__wrapper">
               <a href="#" class="blog-card__link">
                 <div class="blog-card__img">
@@ -443,7 +441,7 @@
       </div>
     </section>
 
-    <section class="top-voice top-voice__mt">
+    <section class="top-voice l-top-voice">
       <div class="top-voice__inner inner">
         <div class="top-voice__title">
           <div class="section-header">
@@ -451,8 +449,8 @@
             <h2 class="section-header__jaTitle">お客様の声</h2>
           </div>
         </div>
-        <ul class="top-voice__items">
-          <li class="top-voice__item voice-card">
+        <ul class="top-voice__items voice-cards">
+          <li class="voice-cards__item voice-card">
             <a href="" class="voice-card__link">
               <div class="voice-card__top">
                 <div class="voice-card__text-wrapper">
@@ -510,7 +508,7 @@
       </div>
     </section>
 
-    <section class="top-price top-price__mt">
+    <section class="top-price l-top-price">
       <div class="top-price__inner inner">
         <div class="top-price__title">
           <div class="section-header">
@@ -598,7 +596,7 @@
       </div>
     </section>
 
-    <section class="top-contact top-contact__mt">
+    <section class="top-contact l-top-contact">
       <div class="top-contact__inner inner">
         <div class="top-contact__content">
           <div class="top-contact__top">
@@ -643,7 +641,7 @@
     <a href="#top"><span></span></a>
   </div>
 
-  <footer class="footer footer__mt">
+  <footer class="footer l-footer">
     <div class="footer__inner inner">
       <div class="footer__img-flex">
         <div class="footer__logoLink">

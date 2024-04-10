@@ -1,6 +1,6 @@
 @use 'global' as *;
 
-.top-contact__mt{
+.l-top-contact{
   margin-top:  rem(80);
 
   @include mq('md'){
