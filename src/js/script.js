@@ -129,4 +129,207 @@ box.each(function(){
      });
 });
 
+
+// Campaign-Tab
+$(function(){
+  $('.tab-list-item').on('click', function(){
+    let index = $('.tab-list-item').index(this);
+
+    $('.tab-list-item').removeClass('is-btn-active');
+    $(this).addClass('is-btn-active');
+    $('.tab-contents').removeClass('is-campaign-contents-active');
+    $('.tab-contents').eq(index).addClass('is-campaign-contents-active');
+  });
+}); 
+
+// Voice-Tab
+$(function(){
+  $('.voice-tab-list-item').on('click', function(){
+    let index = $('.voice-tab-list-item').index(this);
+
+    $('.voice-tab-list-item').removeClass('is-btn-active');
+    $(this).addClass('is-btn-active');
+    $('.voice-tab-contents').removeClass('is-contents-active');
+    $('.voice-tab-contents').eq(index).addClass('is-contents-active');
+  });
+}); 
+
+
+// モーダル
+// 変数に要素を入れる
+var trigger = $('.js-modal'),
+    wrapper = $('.modal__wrapper'),
+    layer = $('.modal__layer'),
+    container = $('.modal__container'),
+    close = $('.modal__close'),
+    content = $('.modal__content');
+
+// 『モーダルを開くボタン』をクリックしたら、『モーダル本体』を表示
+$(trigger).click(function() {
+  $(wrapper).fadeIn(400);
+
+  // クリックした画像のHTML要素を取得して、置き換える
+  $(content).html($(this).prop('outerHTML'));
+
+  // スクロール位置を戻す
+  $(container).scrollTop(0);
+
+  // サイトのスクロールを禁止にする
+  $('html, body').css('overflow', 'hidden');
+});
+
+// 『背景』と『モーダルを閉じるボタン』をクリックしたら、『モーダル本体』を非表示
+$(layer).add(close).click(function() {
+  $(wrapper).fadeOut(400);
+
+  // サイトのスクロール禁止を解除する
+  $('html, body').removeAttr('style');
+});
+
+
+// Information Tab
+// タブ切り替え
+$(function(){
+  $('.js-info-tab').on('click',function(){
+    var idx=$('.js-info-tab').index(this);
+    $(this).addClass('active').siblings('.js-info-tab').removeClass('active');
+    $(this).closest('.info-tab__items').next('.info-tab__panel-area').find('.info-tab__panel').removeClass('active');
+    $('.info-tab__panel').eq(idx).addClass('active');
+  });
+});
+
+// Informationタブへダイレクトリンク
+$(window).on("hashchange", function () {
+  activateTabFromHash();
+});
+
+function activateTabFromHash() {
+  var hash = window.location.hash; // 現在のハッシュを取得
+  var index = getIndexFromHash(hash);
+
+  $(".js-info-tab").removeClass("active");
+  $(".info-tab__panel").removeClass("active");
+
+  if (hash) {
+    $("#info-tab-" + hash.replace("#", "")).addClass("active");
+    $(hash).addClass("active");
+
+    var contentId = hash.replace("#info-tab-", "#");
+    $(contentId).addClass("active");
+
+    showCategory(index);
+  } else {
+    $(".js-info-tab:first").addClass("active");
+    $(".info-tab__panel:first").addClass("active");
+  }
+}
+$(window).on("load", function () {
+  var hash = window.location.hash;
+  var index = getIndexFromHash(hash);
+});
+$(".info-tab__panel:first-of-type").css("display", "block");
+var hash = window.location.hash;
+var index = getIndexFromHash(hash);
+showCategory(index);
+$(".js-info-tab").on("click", function () {
+  var index = $(this).index();
+  showCategory(index);
+});
+
+function showCategory(index) {
+  $(".js-info-tab").removeClass("active");
+  $(".js-info-tab").eq(index).addClass("active");
+  $(".info-tab__panel").hide().eq(index).fadeIn(300);
+}
+
+function getIndexFromHash(hash) {
+  var defaultIndex = 0;
+
+  if (!hash.startsWith("#info-tab-")) {
+    return defaultIndex;
+  }
+
+  var index = parseInt(hash.replace("#info-tab-", ""), 10) - 1;
+
+  if (isNaN(index) || index < 0 || index >= $(".js-info-tab").length) {
+    return defaultIndex;
+  }
+
+  return index;
+}
+
+$('a[href^="#"]').click(function () {
+  const speed = 600;
+  let href = $(this).attr("href");
+  let target = $(href == "#" || href == "" ? "html" : href);
+  $("html, body").animate(
+    {
+      scrollTop: target.offset().top,
+    },
+    speed
+  );
+  return false;
+});
+
+function scrollToSection(index) {
+  const headerHeight = $(".header").height();
+  let target = $(".js-info-tab").eq(index);
+  let targetTop = target.offset().top;
+  let position = targetTop - headerHeight;
+  $("body,html").animate({ scrollTop: position }, 500, "swing");
+}
+
+
+
+// FAQ アコーディオン
+// アコーディオン
+$(function () {
+  $('.jsAccordionTitle').on('click', function () {
+    $(this).next().toggleClass('is-open');
+    $(this).toggleClass('is-active');
+  });
+});
+
+
+// Blog　アーカイブ　アコーディオン
+  var archiveButton = $(".js-archive-button");
+  archiveButton.eq(0).addClass("is-active");
+  // 初期表示　is-activeの次の要素を表示する
+  var archiveButtonActive = $(".js-archive-button.is-active");
+  archiveButtonActive.next().css({
+    display: "block"
+  });
+  // ボタンをクリックしたらアコーディオンする
+  archiveButton.on("click", function () {
+    $(this).toggleClass("is-active");
+    $(this).next().slideToggle(300);
+  });    
+
+
+  // Contactフォーム制御
+  $(function(){
+    //送信ボタンをクリックしたタイミングで検証
+    $('form').on('submit',function(){
+      //エラー用の変数を作成
+      var error;
+      //エラーメッセージを初期化
+      $(this).find('.error').remove();
+  
+      //必須項目の検証
+      $(this).find('.required').each(function(){
+        if($(this).val() === ""){
+          //値が取得できない場合はエラーを返す
+          error = true;
+          //値が取得できない場合はエラーメッセージを表示
+          $(this).after('<span class="error">未入力です</span>');
+        }
+      });
+  
+      //送信ボタンの制御
+      if(error){
+        return false;
+      }
+    });
+  });
+
 });

@@ -1,0 +1,24 @@
+@use 'global' as *;
+
+.page-inner{
+  position: relative;
+}
+
+.page-inner::before{
+  position: absolute;
+  content: "";
+  display: block;
+  background: url(../images/common/top-voice-mask1.png) no-repeat top / contain;
+  top:  rem(-25) ;
+  left: calc(50% - min(48.4vw,  rem(173)));
+  width:  rem(120);
+  height:  rem(55);
+  z-index: -1;
+  @include mq('md'){
+    position: absolute;
+    width:  rem(301);
+    height:  rem(138);
+    top:   rem(-64) ;
+    left: calc(50% - min(48.4vw,  rem(620)));
+  }
+}

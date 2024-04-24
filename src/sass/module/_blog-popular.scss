@@ -1,0 +1,51 @@
+@use 'global' as *;
+
+.blog-popular-cards {
+  margin-top:  rem(24);
+}
+
+.blog-popular-card {
+  padding:  rem(16);
+  display: flex;
+  gap:  rem(16);
+  box-shadow:  rem(2)  rem(2)  rem(4)  rgba(0, 0, 0, 0.25);
+
+}
+
+.blog-popular-card:not(:first-child){
+  margin-top: rem(24);
+}
+
+.blog-popular-card__img{
+  aspect-ratio: 121/90;
+  position: relative;
+  width: 46.2%;
+}
+
+.blog-popular-card__img img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-popular-card__body {
+  width: 48.2%;
+}
+
+.blog-popular-card__date {
+  font-family: $gotu;
+  color: $black;
+  font-size:   rem(12);
+  line-height: calc(18/12);
+}
+
+.blog-popular-card__title{
+  margin-top:  rem(4);
+  font-weight: $bold;
+  font-size:   rem(16);
+  color: $black;
+}
+

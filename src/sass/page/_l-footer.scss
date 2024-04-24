@@ -1,0 +1,23 @@
+@use 'global' as *;
+
+.l-footer{
+  margin-top:  rem(100);
+
+  @include mq('md'){
+    margin-top:  rem(160);
+  }
+}
+
+.l-footer--mt{
+  margin-top:  rem(144);
+  @include mq('md'){
+    margin-top:  rem(120);
+  }
+}
+
+.l-footer--mt0{
+  margin-top:  rem(0);
+  @include mq('md'){
+    margin-top:  rem(0);
+  }
+}

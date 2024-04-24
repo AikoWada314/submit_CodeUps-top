@@ -1,0 +1,58 @@
+@use 'global' as *;
+
+.aside {
+  @include mq('md'){
+    width: 27.22%;
+  }
+}
+
+.aside__inner {
+  padding-left:  rem(25);
+  padding-right:  rem(25);
+  @include mq('md'){
+    padding-left: initial;
+    padding-right: initial;
+  }
+}
+
+.aside__content:not(:first-child) {
+  margin-top:  rem(80);
+}
+
+.aside__heading {
+
+}
+
+.aside__heading-title {
+  position: relative;
+  padding-left:  rem(82);
+  color: $black;
+  font-size:   rem(24);
+  font-weight: 400;
+  border-left: 8px solid $green;
+  padding-top:rem(7);
+  padding-bottom:rem(7);
+}
+
+.aside__heading-title::before{
+  display: inline-block;
+  content:"";
+  background-image: url(../images/common/whales-icon.svg);
+  width:  rem(50);
+  height:  rem(50);
+  position: absolute;
+  background-size: contain;
+  left:  rem(15);
+  top:  rem(0);
+}
+
+
+.aside__items {
+
+}
+
+.aside__archive{
+
+}
+
+

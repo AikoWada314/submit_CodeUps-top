@@ -1,0 +1,100 @@
+@use 'global' as *;
+
+
+.accordion__container {
+  transition-duration: .3s;
+
+}
+
+.accordion__title {
+  position: relative;
+  background-color: $green;
+  color: $white;
+  padding:  rem(16);
+  font-size:   rem(16);
+  font-weight: 400;
+  margin-inline: auto;
+  transition-duration: .3s;
+
+  @include mq('md'){
+    font-size:   rem(20);
+    padding:  rem(25)  rem(40);
+    max-width:  rem(700);
+  } 
+}
+
+.accordion__title:not(:first-child){
+  margin-top:  rem(44);
+  @include mq('md'){
+    margin-top:  rem(40);
+  } 
+}
+
+ .accordion__title::after,
+ .accordion__title::before{
+  content:"";
+  display:block;
+  width: rem(28);
+  height: rem(1);
+  background-color: #fff;
+  position:absolute;
+  right:  rem(16);
+  top:  rem(27);
+  transition-duration: .3s;
+  @include mq('md'){
+    width:  rem(32);
+    top:  rem(40);
+    right:  rem(40);
+  } 
+}
+
+.accordion__title.is-active{
+  position: relative;
+}
+
+.accordion__title.is-active::after,
+.accordion__title.is-active::before{
+  position: absolute;
+  display: inline-block;
+  content:"";
+  color:$white;
+  line-height: 1;
+  width:  rem(28);
+  height:  rem(1);
+  background: currentColor;
+  right:  rem(16);
+  top:  rem(27);
+  transition-duration: .3s;
+  @include mq('md'){
+    width:  rem(32);
+    top:  rem(40);
+    right:  rem(40);
+  } 
+}
+
+.accordion__title.is-active::before {
+  transform: rotate(90deg);
+}
+
+
+.accordion__content {
+  color: $black;
+  font-size:   rem(16);
+  padding:  rem(24)  rem(16);
+  border: 1px solid $green;
+  margin-inline: auto;
+  transition-duration: .3s;
+  @include mq('md'){
+     padding:rem(40);
+     max-width:  rem(700);
+     margin-top:  rem(16);
+  } 
+}
+
+.accordion__content.is-open {
+  background-color: transparent;
+  padding-top: 12px;
+  margin-top: 12px;
+  display: none;
+  transition-duration: .3s;
+}

@@ -1,0 +1,82 @@
+@use 'global' as *;
+
+/*wp-pagenavi base*/
+
+.wp-pagenavi {
+  margin-top:  rem(80);
+}
+
+.wp-pagenavi__inner{
+  display: flex;
+  gap:  rem(12);
+  justify-content: space-between;
+  max-width:  rem(494);
+
+  padding-right: $padding-sp;
+  padding-left: $padding-sp;
+  margin-right: auto;
+  margin-left: auto;
+  @include mq('md'){
+    padding-right: $padding-pc;
+    padding-left: $padding-pc;
+  }
+}
+
+.wp-pagenavi__number{
+  display: flex;
+  gap: rem(12);
+}
+
+.wp-pagenavi a, .wp-pagenavi span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+	width:  rem(38);
+  height:  rem(38);
+  color: $green;
+  font-size:  rem(16);
+  font-weight: $bold;
+  transition: ease .3s;
+  border: 1px solid $green;
+}
+
+.wp-pagenavi a:hover{
+  background-color: #DDF0F1;
+  color: $green;
+}
+
+.wp-pagenavi span.current{
+  background-color: $green;
+  color: $white;
+  font-size: 16px;
+  font-weight: $bold;
+ }
+
+.wp-pagenavi-arrow{
+  position: relative;
+}
+
+ .wp-pagenavi-arrow::before{
+  content: '';
+  width:  rem(8);
+  height:  rem(8);
+  border: 0;
+  border-top: solid  rem(1) $green;
+  border-left: solid rem(1) $green;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;  
+ }
+
+ .wp-pagenavi-arrow.wp-pagenavi-arrow-next{
+  position: relative;
+ }
+
+ .wp-pagenavi-arrow.wp-pagenavi-arrow-next::before{
+  transform: rotate(135deg);
+  right:0; 
+  left:initial;
+ }

@@ -1,7 +1,10 @@
 @use 'global' as *;
 
 .nav {
-
+  display: flex;
+  @include mq('md'){
+    gap:  rem(40);
+  }
 }
 
 .nav__group {
@@ -91,6 +94,10 @@
   vertical-align: middle;
 }
 
+.nav__icon.nav--black::before{
+  background-image: url(../images/common/hitode--black.png);
+}
+
 .nav__icon.nav__icon--mt0{
   margin-top: 0;
 }
@@ -109,3 +116,6 @@
 opacity: 0.7;
 }
 
+.nav--black{
+  color: $black;
+}

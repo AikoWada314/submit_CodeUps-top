@@ -17,8 +17,18 @@
   z-index: 2;
   padding:  rem(15)  rem(87) rem(15)  rem(40);
   border: 1px solid $green;
+}
+
+.btn.short span{
+  padding:  rem(14)  rem(104) rem(14)  rem(51);
 
 }
+
+.btn.reverse span{
+  border: 1px solid $white;
+  padding:  rem(15)  rem(95) rem(15)  rem(40);  
+}
+
 
 // 重ねたボーダー
 .btn::before{
@@ -32,8 +42,13 @@
   left:  rem(4);
 }
 
+.btn.reverse::before{
+  border:  rem(1) solid $white;
+
+}
+
 .btn.long::before{
-  width:  rem(203.45);
+  width:  rem(202);
 }
 
 .btn.slide {
@@ -41,6 +56,11 @@
   color: #fff;
   position: relative;
   z-index: 2;
+}
+
+.btn.reverse.slide{
+  background: $white;
+  color: $green;
 }
 
 .btn.slide::after {
@@ -55,9 +75,19 @@
   transform-origin: left top;
   transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
 }
+
+.btn.reverse.slide::after{
+background-color: $green;
+}
+
 .btn.slide:hover {
   color: $green;
 }
+
+.btn.reverse.slide:hover {
+  color: $white;
+}
+
 .btn.slide:hover::after {
   transform: scale(1, 1);
 }
@@ -76,6 +106,10 @@
 
 }
 
+.btn.reverse span::after{
+  background-color: $green;
+}
+
 .btn span::before{
   position: absolute;
   top: 45%;
@@ -87,7 +121,10 @@
   width:  rem(8);
   height:  rem(1);  
   transition: all .3s;
+}
 
+.btn.reverse span::before{
+  background-color: $green;
 }
 
 .btn:hover span::after{
@@ -102,6 +139,10 @@
   height:  rem(1);
 }
 
+.btn.reverse:hover span::after{
+  background-color: $white;
+}
+
 .btn:hover span::before{
   position: absolute;
   top: 45%;
@@ -112,4 +153,8 @@
   background-color: $green;
   width:  rem(8);
   height:  rem(1);  
+}
+
+.btn.reverse:hover span::before{
+  background-color: $white;
 }

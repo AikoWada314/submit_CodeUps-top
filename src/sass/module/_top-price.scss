@@ -1,12 +1,5 @@
 @use 'global' as *;
 
-.l-top-price{
-  margin-top:  rem(80);
-  @include mq('md'){
-    margin-top:  rem(140);
-
-  }
-}
 
 .top-price {
   background-color: #DDF0F1;
@@ -20,7 +13,7 @@
 .top-price__inner{
 max-width:  rem(600);
 @include mq('md'){
-  max-width: initial;
+  max-width:  rem(1130);
 }
 }
 

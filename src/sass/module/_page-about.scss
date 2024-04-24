@@ -1,0 +1,40 @@
+@use 'global' as *;
+
+.page-about__inner{
+  position: relative;
+  max-width:  rem(600);
+  
+  @include mq('md'){
+    max-width:  rem(1130);
+  }
+  
+}
+.page-about-gallery{
+  margin-top:  rem(40);
+  @include mq('md'){
+    margin-top:  rem(120);
+  }
+}
+.page-about-gallery__modal{
+  margin-top:  rem(40);
+  @include mq('md'){
+    margin-top:  rem(80);
+  }
+}
+
+.page-about__inner::after {
+  display: none;
+
+  @include mq('md'){
+    background: url(../images/common/top-contact-mask.png) no-repeat top / contain;
+    bottom:  rem(-171);
+    content: "";
+    display: block;
+    height:  rem(138);
+    position: absolute;
+    right: calc(50% - min(48.4vw,  rem(634)));
+    width:  rem(301);
+    z-index: 4;
+  }
+  
+}

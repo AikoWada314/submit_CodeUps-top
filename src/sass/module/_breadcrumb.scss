@@ -1,0 +1,15 @@
+@use 'global' as *;
+
+.breadcrumb{
+  margin-top:  rem(8);
+  color: $black;
+  font-size:   rem(14);  
+}
+
+
+.breadcrumb.breadcrumb--404{
+  margin-top:  rem(0);
+  padding-top:  rem(88);
+  background-color: $green;
+  color: $white;
+}

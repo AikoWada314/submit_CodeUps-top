@@ -1,12 +1,6 @@
 @use 'global' as *;
 
-.l-top-campaign{
-  margin-top:  rem(40);
 
-  @include mq('md'){
-    margin-top:  rem(100);
-  }
-}
 
 .top-campaign {
   overflow: hidden;
@@ -21,6 +15,14 @@
   margin-top:  rem(24);
   @include mq('md'){
     margin-top:  rem(40);
+  }
+}
+
+.top-campaign__item{
+  width: rem(280); 
+  height: auto;
+  @include mq('md'){
+    width:  rem(333);
   }
 }
 

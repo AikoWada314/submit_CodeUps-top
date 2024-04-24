@@ -1,12 +1,6 @@
 @use 'global' as *;
 
-.l-footer{
-  margin-top:  rem(100);
 
-  @include mq('md'){
-    margin-top:  rem(160);
-  }
-}
 
 .footer{
   background-color: $green;
@@ -78,10 +72,7 @@
 }
 
 .footer__nav{
-  display: flex;
-  @include mq('md'){
-    gap:  rem(40);
-  }
+
 }
 
 .footer small{

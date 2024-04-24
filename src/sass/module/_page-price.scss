@@ -1,0 +1,31 @@
+@use 'global' as *;
+
+.page-price {
+
+}
+
+.page-price__inner {
+
+}
+
+.page-price__container{
+  margin-inline: auto;
+}
+
+.page-price__container:not(:first-child){
+  // margin-top:  rem(40);
+  // @include mq('md'){
+  //   margin-top:  rem(80);
+  // } 
+}
+
+// Priceページ内リンク位置調整
+.anchor {
+  padding-top: 130px;
+  margin-top: -90px;
+  @include mq('md'){
+    padding-top: 170px;
+
+  }
+
+}

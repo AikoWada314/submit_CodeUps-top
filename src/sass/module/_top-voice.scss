@@ -1,12 +1,5 @@
 @use 'global' as *;
 
-.l-top-voice{
-  margin-top:  rem(80);
- 
-  @include mq('md'){
-    margin-top:  rem(140);
-  }
-}
 
 .top-voice {
   @include mq('md'){
@@ -17,7 +10,7 @@
 .top-voice__inner {
   max-width:  rem(600);
   @include mq('md'){
-    max-width: initial;
+    max-width:  rem(1130);
   }
 }
 
@@ -60,10 +53,7 @@
 
 .top-voice__items {
   margin-top:  rem(40);
-  display: grid;
-  justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax( rem(300), 2fr));
-  gap:  rem(34);
+
 
   @include mq('md'){
     margin-top:  rem(30);

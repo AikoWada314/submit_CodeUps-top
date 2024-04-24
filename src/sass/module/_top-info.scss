@@ -1,13 +1,6 @@
 @use 'global' as *;
 
-.l-top-info{
-  margin-top:  rem(70);
 
-  @include mq('md'){
-    margin-top:  rem(164);
-  }
-
-}
 .top-info {
   background-color: #DDF0F1;
   padding-top:  rem(80);
@@ -22,7 +15,7 @@
 .top-info__inner {
   max-width:  rem(600);
   @include mq('md'){
-    max-width: initial;
+    max-width:  rem(1130);
   }
 }
 

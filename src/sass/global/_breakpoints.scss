@@ -54,9 +54,9 @@ $mediaquerys: (
 @if $startFrom == sp {
   //pcで表示
   .u-desktop {
-    display: none;
+    display: none !important;
     @include mq("md") {
-      display: block;
+      display: flex!important;
     }
   }
 
