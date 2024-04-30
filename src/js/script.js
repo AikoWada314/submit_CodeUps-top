@@ -6,6 +6,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   topBtn.hide();
 
   $(window).scroll(function () {
+    
     if ($(this).scrollTop() > 90) {
       topBtn.fadeIn();
     } else {
@@ -26,7 +27,7 @@ $(window).scroll(function () {
     header.removeClass('is-color');
   }
 });
-
+console.log("test")
 
 //ドロワーメニュー
 $(".js-hamburger").click(function () {
@@ -44,6 +45,10 @@ $(".js-hamburger").click(function () {
       });
     }
   }
+  $(".sp-nav__child").click(function () {
+    $(".js-sp-nav").removeClass("is-active");
+    $(".js-hamburger").removeClass("is-active");
+  });
 
 });
 
@@ -200,12 +205,14 @@ $(function(){
 
 // Informationタブへダイレクトリンク
 $(window).on("hashchange", function () {
+  scrollToSection();
   activateTabFromHash();
 });
 
 function activateTabFromHash() {
   var hash = window.location.hash; // 現在のハッシュを取得
   var index = getIndexFromHash(hash);
+  console.log("ハッシュ", hash)
 
   $(".js-info-tab").removeClass("active");
   $(".info-tab__panel").removeClass("active");
@@ -226,6 +233,9 @@ function activateTabFromHash() {
 $(window).on("load", function () {
   var hash = window.location.hash;
   var index = getIndexFromHash(hash);
+  if(hash){
+    scrollToSection()
+  }
 });
 $(".info-tab__panel:first-of-type").css("display", "block");
 var hash = window.location.hash;
@@ -271,22 +281,30 @@ $('a[href^="#"]').click(function () {
   return false;
 });
 
-function scrollToSection(index) {
+function scrollToSection() {
   const headerHeight = $(".header").height();
-  let target = $(".js-info-tab").eq(index);
+  console.log("Header height:",headerHeight);  // ヘッダーの高さをログに出力
+
+  let target = $(".js-info-tab");
+  console.log("Target Element:", target);  // 対象の要素をログに出力
+
   let targetTop = target.offset().top;
+  console.log("Target Top:", targetTop);  // 対象の要素の上端の位置をログに出力
+
   let position = targetTop - headerHeight;
-  $("body,html").animate({ scrollTop: position }, 500, "swing");
+  console.log("Scroll Position:", position);  // スクロールする位置をログに出力
+
+  $("body,html").animate({ scrollTop: position }, 500, "swing", function() {
+    console.log("Animation completed.");  // アニメーション完了後にログを出力
+  });
 }
-
-
 
 // FAQ アコーディオン
 // アコーディオン
 $(function () {
   $('.jsAccordionTitle').on('click', function () {
-    $(this).next().toggleClass('is-open');
-    $(this).toggleClass('is-active');
+    $(this).next().toggleClass('is-open', 300);
+    $(this).toggleClass('is-active', 300);
   });
 });
 
@@ -307,29 +325,33 @@ $(function () {
 
 
   // Contactフォーム制御
-  $(function(){
-    //送信ボタンをクリックしたタイミングで検証
-    $('form').on('submit',function(){
-      //エラー用の変数を作成
-      var error;
-      //エラーメッセージを初期化
-      $(this).find('.error').remove();
-  
-      //必須項目の検証
-      $(this).find('.required').each(function(){
-        if($(this).val() === ""){
-          //値が取得できない場合はエラーを返す
-          error = true;
-          //値が取得できない場合はエラーメッセージを表示
-          $(this).after('<span class="error">未入力です</span>');
+  $(function() {
+    $(".js-contact-form").on("submit", function(event) {
+        // フォームのデフォルトの送信をキャンセル
+        event.preventDefault();
+        
+        // 入力された値を取得
+        var name = $(this).find('input[name="name"]').val();
+        var email = $(this).find('input[name="email"]').val();
+        var tel = $(this).find('input[name="tel"]').val();
+        var privacyChecked = $(this).find('input[name="privacy-policy"]').is(":checked");
+        
+        // 必須項目が未入力の場合はエラーメッセージを表示
+        if (name === "" || email === "" || tel === "" || !privacyChecked) {
+            $(this).find('input[name="name"]').toggleClass("is-error", name === "");
+            $(this).find('input[name="email"]').toggleClass("is-error", email === "");
+            $(this).find('input[name="tel"]').toggleClass("is-error", tel === "");
+            $(this).find('input[name="privacy-policy"]').toggleClass("is-error", !privacyChecked);
+            
+            // エラーメッセージを表示する
+            $(".page-contact__error-message").css("display", "block");
+        } else {
+            // フォームが正常に入力されている場合は、ここにフォームの送信処理を追加する
+            // 例えば、このフォームがAjaxを使用してサーバーに送信される場合は、そのコードをここに追加する
+            // この例では、フォームが正常に送信されるとメッセージをログに表示するだけです
+            console.log("Form submitted successfully!");
         }
-      });
-  
-      //送信ボタンの制御
-      if(error){
-        return false;
-      }
     });
-  });
+});
 
 });

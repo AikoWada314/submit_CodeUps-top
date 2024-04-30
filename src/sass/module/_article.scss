@@ -12,14 +12,21 @@
   font-weight: $bold;
   color: $black;
   margin-top:  rem(8);
-  padding-bottom:  rem(4);
+  padding-bottom:  rem(2);
   border-bottom: 1px solid $green;
+  @include mq('md'){
+    font-size:   rem(32);
+    padding-bottom:  rem(0);
+  }
 }
 
 .article__img {
   position: relative;
   aspect-ratio: 345/231;
   margin-top:  rem(24);
+  @include mq('md'){
+    margin-top:  rem(37);
+  }
 }
 
 .article__img img{
@@ -36,11 +43,16 @@
   font-size:   rem(16);
   line-height: calc(24 /16 );
   margin-top:  rem(24);
+  @include mq('md'){
+    margin-top:  rem(42);
+  }
 }
 
 .artilce__lists {
   margin-top:  rem(24);
-
+  @include mq('md'){
+    margin-top:  rem(40);
+  }
 }
 
 .article__list {

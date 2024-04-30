@@ -44,7 +44,7 @@ $check-space-betweenRadio: rem(10);//ラジオボタンの間の距離
 $check-weight: 2px;//チェックマークの線の太さ(px)
 
 /*テキストエリアの指定*/
-$textarea-height: rem(255);
+$textarea-height: rem(200);
 
 [type="text"],
 [type="search"],
@@ -60,7 +60,7 @@ textarea {
 	background-image: none;
 	font-family: inherit;
 	/*↓カスタム */
-  margin-top: rem(10);
+  margin-top: rem(13);
 	font-size: $fz;
 	padding: $padding-und $padding-lnr;
 	width: 100%;
@@ -80,21 +80,14 @@ textarea {
 	}
 }
 
-// [type="text"].error,
-// [type="tel"].error,
-// [type="email"].error,
-// textarea.error{
-// 	background: rgba(201, 72, 0, 0.2);
-// 	border-color: #C94800;
-// }
-
-dl.error{
-	display: block;
-	font-size: 12px;
-	font-weight: bold;
-	color: red;
-	margin: 10px 0 0;
+[type="text"].is-error,
+[type="tel"].is-error,
+[type="email"].is-error,
+textarea.is-error{
+	background: rgba(201, 72, 0, 0.2);
+	border-color: #C94800;
 }
+
 
 [type="tel"] {
   width: 100%;
@@ -209,8 +202,8 @@ dl.error{
 		&::after {
 			content: "";
 			position: absolute;
-			top: 50%;
-			left: 0;
+			top: 40%;
+			left:  rem(0);
 			display: block;
 			opacity: 1;
 			/*チェックマークじゃない場合は以下を変更する*/
@@ -222,6 +215,35 @@ dl.error{
 			border-left: $check-weight solid $check-bg-cr-inner;
 			border-bottom: $check-weight solid $check-bg-cr-inner;
 
+  @include mq('md'){
+		left:  rem(0);
+		top: 50%;
+  }		
+	}
+	}
+}
+
+.form__privacy-check{
+	&:checked + span {
+		&::after {
+			content: "";
+			position: absolute;
+			top: 27%!important;
+			left:  rem(3)!important;
+			display: block;
+			opacity: 1;
+			/*チェックマークじゃない場合は以下を変更する*/
+			transform: translateY(-50%) rotate(-45deg);
+			width: calc($check-size * 0.9);
+			height: calc($check-size * 0.5);
+			margin-top: -0.1em;
+			margin-left: 0.1em;
+			border-left: $check-weight solid $check-bg-cr-inner;
+			border-bottom: $check-weight solid $check-bg-cr-inner;
+			@include mq('md'){
+				top: 45%!important;
+				left:  rem(-8)!important;
+			}
 		}
 	}
 }
@@ -237,19 +259,26 @@ select {
 	/*↓カスタム */
   margin-top: rem(10);
 	font-size: $fz;
-	padding: $padding-und $padding-lnr;
+	padding:  rem(10)  rem(8);
 	background-color: $back-cr;
   border: 1px solid $border-cr-default;
   border-radius: $border-r;
 	/*↓デフォルトのアイコンを消す場合はコメントアウト（noneにする）*/
-	appearance: auto;
+	// appearance: auto;
 	/*↓デフォルトではないアイコンを使う場合は入力する*/
-	// background-image: url();
-	// background-position: right 12px center;
-	// background-repeat: no-repeat;
+	background-image: url(../images/common/Polygon3.jpg);
+	background-position: right 9px center;
+	background-repeat: no-repeat;
+	// width:  rem(12);
+	// height:  rem(12);
 	&:focus {
 		border: 1px solid $border-cr;
 	}
+	@include mq('md'){
+		margin-top: 0;
+		padding:  rem(4)  rem(8);
+
+  }
 }
 
 [type="date"] {
@@ -261,7 +290,7 @@ select {
 	// background-position: right 12px center;
 	// background-repeat: no-repeat;
 	&:focus {
-		border-color: 1px solid $border-cr;
+		border-color: $border-cr;
 	}
 }
 
@@ -283,18 +312,19 @@ textarea {
 	background-color: #C94800;
 	color: $white;
 	font-size:   rem(12);
-	padding:  rem(2)  rem(16);
-	margin-left:  rem(8);
+	padding:  rem(2)  rem(18);
+	margin-left:  rem(9);
 }
 
 
 
 
 .form__privacy-policy{
-
+	margin: 0;
 	color: #000 !important;
 	line-height: calc(22 /14 ) !important;
 	font-size:   rem(14) !important;
+
 }
 
 form{
@@ -319,7 +349,7 @@ form{
 		display: flex;
 		align-items: flex-start;
 		justify-content: flex-start;
-		padding-bottom:  rem(40);
+		padding-bottom:  rem(38);
   }
 }
 
@@ -331,6 +361,7 @@ form{
 }
 
 .form__item dt{
+	font-weight: $bold;
 	@include mq('md'){
 		width: 31.4%;
   }
@@ -351,7 +382,7 @@ input::placeholder{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top:  rem(40);
+	margin-top:  rem(35);
 	padding: initial;
 	padding-left:  rem(32);
 	padding-right:  rem(32);
@@ -361,9 +392,32 @@ input::placeholder{
 		margin-top:  rem(80);
 
   }
+
+	
 }
 
 .form__item.form__item--acceptance [type=checkbox] + span::before{
-	transform: scale(1.5);
-	top: rem(4);
+	width:  rem(22);
+	height:  rem(22);
+	top: rem(11);
+	@include mq('md'){
+		left:  rem(-12);
+  }
+
+	
+}
+
+.form__item.form__item--acceptance [type=checkbox] + span{
+	margin: 0;
+	@include mq('md'){
+		margin-left:  rem(13);
+  }
+}
+
+.form__item--choice{
+	font-size:   rem(12);
+	margin-top:  rem(16);
+	@include mq('md'){
+		margin-top: 0;
+  }
 }

@@ -158,3 +158,90 @@ background-color: $green;
 .btn.reverse:hover span::before{
   background-color: $white;
 }
+
+.button{
+  background-color: #408F95;
+  border: 1px solid #408F95;
+  color: #fff;
+  display: inline-block;
+  flex-shrink: 1;
+  font-family: "Gotu", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5714285714;
+  margin-bottom: 0.25rem;
+  margin-right: 0.25rem;
+  padding: 0.9375rem 5.5rem 0.9375rem 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.button--send{
+  padding: 1rem 7rem 1rem 3.5rem;
+}
+
+.button::after {
+  background: #fff;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+  width: 100%;
+  z-index: -1;
+}
+
+.button--send span::after {
+  background-color: #fff;
+  content: "";
+  display: inline-block;
+  height: 0.4375rem;
+  mask-image: url(../images/common/right.svg);
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  position: absolute;
+  right: 3.5rem;
+  top: 1.125rem;
+  width: 2.5rem;
+}
+
+.button:hover span::after {
+  background-color: #408F95;
+}
+
+.button:hover {
+  color: #408F95;
+  transition: 0.2s;
+}
+
+.button::after {
+  background: #fff;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+  width: 100%;
+  z-index: -1;
+}
+
+.button::before {
+  border: 1px solid #408F95;
+  content: "";
+  height: 100%;
+  left: 0.25rem;
+  position: absolute;
+  top: 0.25rem;
+  width: 100%;
+  z-index: -100;
+}
+
+.button:hover::after {
+  transform: scale(1, 1);
+}

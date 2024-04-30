@@ -18,7 +18,7 @@
   z-index: 4;
 
   @include mq('md'){
-  top:  rem(-60);
+  top:  rem(-33);
   right: calc(50% - min(48.4vw,  rem(668)));
   width:  rem(301);
   height:  rem(138);
@@ -130,7 +130,7 @@
 }
 
 .top-contact__bottom {
-  margin-top:  rem(40);
+  margin-top:  rem(36);
   @include mq('md'){
     width: 47.038%;
     margin-top: 0;

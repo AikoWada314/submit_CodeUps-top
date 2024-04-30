@@ -90,13 +90,13 @@
                 <a class="sp-nav__icon sp-nav__icon--mt0" href="./page-campaign.html">キャンペーン</a>
               </div>
               <div class="sp-nav__link">
-                <a class="sp-nav__child" href="#">ライセンス取得</a>
+                <a class="sp-nav__child" href="./page-campaign.html">ライセンス取得</a>
               </div>
               <div class="sp-nav__link">
-                <a class="sp-nav__child" href="#">貸切体験ダイビング</a>
+                <a class="sp-nav__child" href="./page-campaign.html">貸切体験ダイビング</a>
               </div>
               <div class="sp-nav__link">
-                <a class="sp-nav__child" href="#">ナイトダイビング</a>
+                <a class="sp-nav__child" href="./page-campaign.html">ナイトダイビング</a>
               </div>
             </li>
             <li class="sp-nav__item">
@@ -132,16 +132,16 @@
             </li>
             <li class="sp-nav__item">
               <div class="sp-nav__link">
-                <a class="sp-nav__icon" href="./page-contact.html">料金一覧</a>
+                <a class="sp-nav__icon" href="./page-price.html">料金一覧</a>
               </div>
               <div class="sp-nav__link">
-                <a class="sp-nav__child" href="./page-information.html#info-tab-1">ライセンス講習</a>
+                <a class="sp-nav__child" href="./page-price.html#licenseDiving">ライセンス講習</a>
               </div>
               <div class="sp-nav__link">
-                <a class="sp-nav__child" href="./page-information.html#info-tab-2">体験ダイビング</a>
+                <a class="sp-nav__child" href="./page-price.html#experienceDiving">体験ダイビング</a>
               </div>
               <div class="sp-nav__link">
-                <a class="sp-nav__child" href="./page-information.html#info-tab-3">ファンダイビング</a>
+                <a class="sp-nav__child" href="./page-price.html#funDiving">ファンダイビング</a>
               </div>
             </li>
             <li class="sp-nav__item">
@@ -189,95 +189,93 @@
       </div>
     </div>
 
-    <section class="page-contact l-page-margin">
+    <div class="page-contact l-page-margin">
       <div class="page-contact__inner inner page-inner">
         <div class="page-contact__error-message">
           <p>※必須項目が入力されていません。<br class="u-mobile">入力してください。</p>
         </div>
-        <div class="page-contact__form form js-contact-form">
-          <form action="" method="post" id="form">
-            <dl class="form__item">
-              <dt>
-                お名前<span class="form__must">必須</span>
-              </dt>
-              <dd>
-                <input type="text" class="required" name="name" required placeholder="沖縄　太郎" />
-              </dd>
-            </dl>
-            <dl class="form__item">
-              <dt>
-                メールアドレス<span class="form__must">必須</span>
-              </dt>
-              <dd>
-                <input type="email" class="required" name="email" required placeholder="aaa000@ggmail.com" />
-              </dd>
-            </dl>
-            <dl class="form__item">
-              <dt>
-                電話番号<span class="form__must">必須</span>
-              </dt>
-              <dd>
-                <input type="tel" class="required" name="tel" required placeholder="000-0000-0000" />
-              </dd>
-            </dl>
-            <dl class="form__item">
-              <dt class="">
-                お問い合わせ項目<span class="form__must">必須</span>
-              </dt>
-              <dd>
-                <label><input type="checkbox" name="classes" value="ダイビング講習について"
-                    checked /><span>ダイビング講習について</span></label>
-                <label><input type="checkbox" name="funDiving" value="ファンダイビングについて" /><span>ファンダイビングについて</span></label>
-                <label><input type="checkbox" name="experienceDiving"
-                    value="体験ダイビングについて" /><span>体験ダイビングについて</span></label>
-              </dd>
-            </dl>
-            <dl class="form__item">
-              <dt>
-                キャンペーン
-              </dt>
-              <dd>
-                <select name="campaign-content">
-                  <option value="">キャンペーン内容を選択</option>
-                  <option value="セレクト1">セレクト1</option>
-                  <option value="セレクト2">セレクト2</option>
-                </select>
-              </dd>
-            </dl>
-            <dl class="form__item">
-              <dt>
-                お問い合わせ内容<span class="form__must">必須</span>
-              </dt>
-              <dd>
-                <textarea name="contents"></textarea>
-              </dd>
-            </dl>
+        <form action="#" method="post" id="form" class="page-contact__form form js-contact-form"
+          novalidate="novalidate">
+          <dl class="form__item">
+            <dt>
+              お名前<span class="form__must">必須</span>
+            </dt>
+            <dd>
+              <input type="text" class="required" name="name" required placeholder="沖縄　太郎" />
+            </dd>
+          </dl>
+          <dl class="form__item">
+            <dt>
+              メールアドレス<span class="form__must">必須</span>
+            </dt>
+            <dd>
+              <input type="email" class="required" name="email" required placeholder="aaa000@ggmail.com" />
+            </dd>
+          </dl>
+          <dl class="form__item">
+            <dt>
+              電話番号<span class="form__must">必須</span>
+            </dt>
+            <dd>
+              <input type="tel" class="required" name="tel" required placeholder="000-0000-0000" />
+            </dd>
+          </dl>
+          <dl class="form__item">
+            <dt class="">
+              お問い合わせ項目<span class="form__must">必須</span>
+            </dt>
+            <dd>
+              <label><input type="checkbox" name="classes" value="ダイビング講習について"
+                  checked /><span>ダイビング講習について</span></label>
+              <label><input type="checkbox" name="funDiving" value="ファンダイビングについて" /><span>ファンダイビングについて</span></label>
+              <label><input type="checkbox" name="experienceDiving"
+                  value="体験ダイビングについて" /><span>体験ダイビングについて</span></label>
+            </dd>
+          </dl>
+          <dl class="form__item">
+            <dt>
+              キャンペーン
+            </dt>
+            <dd>
+              <select class="form__item--choice" name="campaign-content">
+                <option value="">キャンペーン内容を選択</option>
+                <option value="セレクト1">セレクト1</option>
+                <option value="セレクト2">セレクト2</option>
+              </select>
+            </dd>
+          </dl>
+          <dl class="form__item">
+            <dt>
+              お問い合わせ内容<span class="form__must">必須</span>
+            </dt>
+            <dd>
+              <textarea name="contents"></textarea>
+            </dd>
+          </dl>
 
-            <div class="form__item form__item--acceptance">
-              <label><input type="checkbox" name="privacy-policy" value="個人情報" class="required" required /><span
-                  class="form__privacy-policy"><a href="./privacy-policy.html">個人情報の取り扱い</a>について同意のうえ<br
-                    class="u-mobile">
-                  送信します。</span></label>
-            </div>
+          <div class="form__item form__item--acceptance">
+            <label><input type="checkbox" name="privacy-policy" value="個人情報" class="required form__privacy-check"
+                required /><span class="form__privacy-policy"><a href="./privacy-policy.html">個人情報の取り扱い</a>について同意のうえ<br
+                  class="u-mobile">
+                送信します。</span></label>
+          </div>
 
-            <div class="form__btn">
-              <button id="send" type="submit" class="btn slide short"><span>Send</span></button>
+          <div class="form__btn">
 
-              <!-- <a class="btn slide short"><span>Send</span></a> -->
-            </div>
-          </form>
-        </div>
+            <button class="button button--send"><span>Send</span></button>
+          </div>
+        </form>
 
 
       </div>
-    </section>
+    </div>
   </main>
 
   <div class="to-top">
     <a href="#top"><span></span></a>
   </div>
 
-  <footer class="footer l-footer">
+  <footer class="footer l-footer l-footer--contact">
     <div class="footer__inner inner">
       <div class="footer__img-flex">
         <div class="footer__logoLink">
@@ -286,12 +284,12 @@
         </div>
         <div class="footer__sns-icon">
           <div class="footer__fb-img">
-            <a href="https://www.facebook.com/"><img src="./assets/images/common/FacebookLogo.png" alt="Facebook"
-                loading="lazy" decoding="async"></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img
+                src="./assets/images/common/FacebookLogo.png" alt="Facebook" loading="lazy" decoding="async"></a>
           </div>
           <div class="footer__ig-img">
-            <a href="https://www.instagram.com/"><img src="./assets/images/common/instagram.png" alt="instagram"
-                loading="lazy" decoding="async"></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img
+                src="./assets/images/common/instagram.png" alt="instagram" loading="lazy" decoding="async"></a>
           </div>
         </div>
       </div>
@@ -304,13 +302,13 @@
                 <a class="nav__icon nav__icon--mt0" href="./page-campaign.html">キャンペーン</a>
               </div>
               <div class="nav__link">
-                <a class="nav__child" href="#">ライセンス取得</a>
+                <a class="nav__child" href="./page-campaign.html">ライセンス取得</a>
               </div>
               <div class="nav__link">
-                <a class="nav__child" href="#">貸切体験ダイビング</a>
+                <a class="nav__child" href="./page-campaign.html">貸切体験ダイビング</a>
               </div>
               <div class="nav__link">
-                <a class="nav__child" href="#">ナイトダイビング</a>
+                <a class="nav__child" href="./page-campaign.html">ナイトダイビング</a>
               </div>
             </li>
             <li class="nav__item">
@@ -353,7 +351,7 @@
                 <a class="nav__icon" href="./page-price.html">料金一覧</a>
               </div>
               <div class="nav__link">
-                <a class="nav__child" href="./page-price.html#license">ライセンス講習</a>
+                <a class="nav__child" href="./page-price.html#licenseDiving">ライセンス講習</a>
               </div>
               <div class="nav__link">
                 <a class="nav__child" href="./page-price.html#experienceDiving">体験ダイビング</a>

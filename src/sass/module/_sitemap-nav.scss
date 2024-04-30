@@ -1,13 +1,13 @@
 @use 'global' as *;
 
-.nav {
+.sitemap-nav {
   display: flex;
   @include mq('md'){
-    gap:  rem(40);
+    gap:  rem(133);
   }
 }
 
-.nav__group {
+.sitemap-nav__group {
   display: flex;
   flex-direction: column;
   gap:  rem(12);
@@ -24,7 +24,7 @@
   
 }
 
-.nav__group.nav__group--ml{
+.sitemap-nav__group.sitemap-nav__group--ml{
   padding-left:  rem(44);
   @include mq('md'){
     padding-left:  rem(18);
@@ -32,39 +32,45 @@
   }
 }
 
-.nav__items {
+.sitemap-nav__items {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top:  rem(24);
   @include mq('md'){
-    margin-top:  rem(16);
+    margin-top:  rem(0);
   }
 }
 
-.nav__items.nav__items--mt{
-  margin-top:  rem(40);
-  @include mq('md'){
-    margin-top:  rem(16);
+.sitemap-nav__items.sitemap-nav__items--mt{
+  // margin-top:  rem(40);
+  // @include mq('md'){
+  //   margin-top:  rem(16);
 
-  }
+  // }
 }
 
-.nav__items.nav__items--mt0{
+.sitemap-nav__items.sitemap-nav__items--mt0{
   margin-top:  rem(0);
 }
 
-.nav__item {
+.sitemap-nav__items.sitemap-nav__items--ml{
+  @include mq('md'){
+    margin-left:  rem(65);
+  }
+}
+
+.sitemap-nav__item {
   width: 100%;
 
 }
 
-.nav__link {
+.sitemap-nav__link {
 
 }
 
-.nav__icon {
+.sitemap-nav__icon {
   position: relative;
   font-size:   rem(16);
   color: $white;
@@ -75,17 +81,17 @@
   transition: all .3s;
 }
 
-.nav__icon:hover{
+.sitemap-nav__icon:hover{
   opacity: 0.7;
 }
 
-.nav__icon.nav__icon--mt0{
+.sitemap-nav__icon.sitemap-nav__icon--mt0{
   @include mq('md'){
     margin-top: 0;
   }
 }
 
-.nav__icon::before{
+.sitemap-nav__icon::before{
   position: absolute;
   top: 0;
   left:  rem(-22);
@@ -98,15 +104,15 @@
   vertical-align: middle;
 }
 
-.nav__icon.nav--black::before{
+.sitemap-nav__icon.sitemap-nav--black::before{
   background-image: url(../images/common/hitode--black.png);
 }
 
-.nav__icon.nav__icon--mt0{
+.sitemap-nav__icon.sitemap-nav__icon--mt0{
   margin-top: 0;
 }
 
-.nav__child {
+.sitemap-nav__child {
   width: 100%;
   font-size:   rem(16);
   color: $white;
@@ -116,10 +122,10 @@
   transition: all .3s;
 }
 
-.nav__child:hover {
+.sitemap-nav__child:hover {
 opacity: 0.7;
 }
 
-.nav--black{
+.sitemap-nav--black{
   color: $black;
 }

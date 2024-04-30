@@ -50,6 +50,11 @@
 .header__logoLink img{
   width:  rem(102);
   height:  rem(38);
+  
+  @include mq('md'){
+    width:  rem(133);
+    height:  rem(50);
+  }
 }
 
 .header__drawer{

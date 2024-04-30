@@ -12,11 +12,27 @@
   margin-inline: auto;
 }
 
-.page-price__container:not(:first-child){
-  // margin-top:  rem(40);
-  // @include mq('md'){
-  //   margin-top:  rem(80);
-  // } 
+.page-price__container:first-child{
+  position: relative;
+}
+
+.page-price__container:first-child::before{
+  position: absolute;
+  content: "";
+  display: block;
+  background: url(../images/common/top-voice-mask1.png) no-repeat top / contain;
+  top:  rem(103) ;
+  left: calc(50% - min(48.4vw,  rem(173)));
+  width:  rem(120);
+  height:  rem(55);
+  z-index: -1;
+  @include mq('md'){
+    position: absolute;
+    width:  rem(301);
+    height:  rem(138);
+    top:   rem(103) ;
+    left: calc(50% - min(48.4vw,  rem(620)));
+  }  
 }
 
 // Priceページ内リンク位置調整
@@ -28,4 +44,11 @@
 
   }
 
+}
+
+.anchor.anchor--mt{
+  margin-top:  rem(-217);
+  @include mq('md'){
+    margin-top:  rem(-162);
+  }
 }

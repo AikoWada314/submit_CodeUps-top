@@ -7,8 +7,19 @@
 }
 
 .aside__inner {
-  padding-left:  rem(25);
+  padding-left:  rem(20);
+  padding-right:  rem(20);
+  margin-top:  rem(80);
+
+  @include mq('md'){
+    padding-left: initial;
+    padding-right: initial;
+    margin-top:  rem(0);
+  }
+}
+.aside__inner.aside__inner--pa{
   padding-right:  rem(25);
+  padding-left:  rem(25);
   @include mq('md'){
     padding-left: initial;
     padding-right: initial;
@@ -16,7 +27,7 @@
 }
 
 .aside__content:not(:first-child) {
-  margin-top:  rem(80);
+  margin-top:  rem(77);
 }
 
 .aside__heading {
@@ -25,7 +36,7 @@
 
 .aside__heading-title {
   position: relative;
-  padding-left:  rem(82);
+  padding-left:  rem(74);
   color: $black;
   font-size:   rem(24);
   font-weight: 400;

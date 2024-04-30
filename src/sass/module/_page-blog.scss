@@ -1,6 +1,9 @@
 @use 'global' as *;
 
 .page-blog__inner{
+  padding-left:  rem(21);
+  padding-right:  rem(21);
+
   @include mq('md'){
     display: flex;
     gap:  rem(80);
@@ -23,6 +26,7 @@
   margin-top:  rem(52);
   max-width:  rem(600);
   @include mq('md'){
+    margin-top:  rem(0);
     max-width: initial;
     display: grid;
     row-gap:  rem(80);

@@ -67,20 +67,13 @@
   margin-inline: auto;
 
   @include mq('md'){
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     row-gap:  rem(80);
     column-gap:  rem(40);
-    flex-wrap: wrap;
     max-width:initial;
     padding-left: initial;
     padding-right: initial;
-  }
-}
-
-.tab-contents__campaign-card{
-  margin-inline: auto;
-  @include mq('md'){
-    width: 48.149%;
   }
 }
 

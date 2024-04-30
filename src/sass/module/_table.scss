@@ -1,12 +1,12 @@
 @use 'global' as *;
 
 .table {
-
   @include mq('md'){
     display: flex;
     max-width:  rem(700);
   } 
 }
+
 
 .table__category {
   position: relative;
@@ -37,6 +37,15 @@
   margin-left:  rem(32);
   @include mq('md'){
     margin-left: 0;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
   } 
 }
 
@@ -70,7 +79,7 @@ table{
 th,td{
   border: solid 1px $green;      
   @include mq('md'){
-    padding :rem(18);
+    padding :rem(16);
     
   }       
 }
@@ -86,9 +95,10 @@ font-size:   rem(16);
 line-height: calc(24 /16 );
 color: $black;
 width: 69.77%;
-padding-top:  rem(7);
-padding-bottom:  rem(7);
+padding-top:  rem(5);
+padding-bottom:  rem(5);
 text-align: center;
+height:  rem(60);
   @include mq('md'){
     width: 48.571%;   
     text-align-last: left;

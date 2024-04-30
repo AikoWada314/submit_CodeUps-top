@@ -21,3 +21,10 @@
     margin-top:  rem(0);
   }
 }
+
+.l-footer.l-footer--contact{
+  margin-top:  rem(150);
+  @include mq('md'){
+    margin-top:  rem(160);
+  }
+}

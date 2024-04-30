@@ -1,5 +1,8 @@
 @use 'global' as *;
 
 .page-info__tab{
-  margin-top:  rem(121);
+  padding-top:  rem(67);
+  @include mq('md'){
+    padding-top: 0;
+  }
 }
