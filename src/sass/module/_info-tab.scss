@@ -1,8 +1,5 @@
 @use 'global' as *;
 
-.info-tab {
-
-}
 
 .info-tab__items {
 display: flex;
@@ -28,7 +25,13 @@ justify-content: space-between;
 }
 
 .info-tab__item:hover{
-  // opacity: 0.7;
+  background-color:$green;
+  color: $white;
+}
+
+
+.info-tab__item:hover::before{
+  background-color: $white;
 }
 
 .info-tab__item.active {
@@ -49,17 +52,19 @@ color: $white;
     mask-size: contain;
     left:  rem(30);
     top:  rem(11);
+    transition: all .3s;
+
   }
 }
 
-.info-tab__item.info-tab__item-b::before{
+.info-tab__item.info-tab__item--b::before{
   @include mq('md'){
     mask-image: url(../images/common/info-tab-b.svg);
     left:  rem(26);
   }
 }
 
-.info-tab__item.info-tab__item-c::before{
+.info-tab__item.info-tab__item--c::before{
   @include mq('md'){
     mask-image: url(../images/common/info-tab-c.svg);
     left:  rem(17);
@@ -87,17 +92,7 @@ color: $white;
   display: block;
 }
 
-.info-tab__panel-items {
 
-}
-
-.info-cards {
-
-}
-
-.info-tab__panel-item {
-
-}
 
 .info-card {
   border: 1px solid $green;

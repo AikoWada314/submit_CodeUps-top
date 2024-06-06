@@ -171,14 +171,14 @@
   </header>
 
   <main>
-    <section class="page-mv blog-mv">
-      <div class="blog-mv__img">
+    <section class="page-mv">
+      <div class="page-mv__img">
         <picture>
           <source srcset="./assets/images/common/page-blog-mv.jpg" media="(min-width:768px)">
           <img src="./assets/images/common/page-blog-mv-sp.jpg" alt="海の中で泳ぐ魚とダイバー" loading="lazy" decoding="async">
         </picture>
       </div>
-      <div class="page-mv__title blog-mv__title">
+      <div class="page-mv__title">
         <h2>Blog</h2>
       </div>
     </section>
@@ -192,8 +192,8 @@
     <div class="page-blog l-page-margin">
       <div class="inner page-inner page-blog__inner">
         <div class="page-blog__main-detail">
-          <ul class="page-blog__articles articles">
-            <li class="page-blog__article article">
+          <div class="page-blog__articles articles">
+            <div class="articles__item article">
               <div class="article__date">
                 <time datetime="2023-11-17">2023.11.17</time>
               </div>
@@ -201,27 +201,27 @@
               <div class="article__img">
                 <img src="./assets/images/common/top-blog1.jpg" alt="イソギンチャク" loading="lazy" decoding="async">
               </div>
-              <p class="article__text">
+              <p>
                 ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
               </p>
-              <div class="article__img">
+              <div>
                 <img src="./assets/images/common/top-blog1.jpg" alt="イソギンチャク" loading="lazy" decoding="async">
               </div>
-              <p class="article__text">
+              <p>
                 ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
               </p>
-              <ul class="artilce__lists">
-                <li class="article__list">リスト1</li>
-                <li class="article__list">リスト2</li>
-                <li class="article__list">リスト3</li>
+              <ul>
+                <li>リスト1</li>
+                <li>リスト2</li>
+                <li>リスト3</li>
               </ul>
-              <p class="article__text">
+              <p>
                 ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
               </p>
-            </li>
-          </ul>
+            </div>
+          </div>
 
-          <div class="wp-pagenavi wp-pagenavi--mt wp-pagenavi--post">
+          <div class="wp-pagenavi l-wp-pagenavi--mt">
             <div class="wp-pagenavi__inner wp-pagenavi__inner--mw">
               <a class="prevpostslink prevpostslink--hover" href="#">
                 <div class="wp-pagenavi-arrow"></div>
@@ -239,38 +239,44 @@
                 <h2 class="aside__heading-title">人気記事</h2>
               </div>
               <ul class="aside__items blog-popular-cards">
-                <li class="blog-popular-card">
-                  <div class="blog-popular-card__img">
-                    <img src="./assets/images/common/top-blog4.jpg" alt="海で泳ぐ黄色い魚" loading="lazy" decoding="async">
-                  </div>
-                  <div class="blog-popular-card__body">
-                    <div class="blog-popular-card__date">
-                      <time datetime="2023-11-17">2023.11.17</time>
+                <li class="blog-popular-cards__item blog-popular-card">
+                  <a class="blog-popular-card__link" href="">
+                    <div class="blog-popular-card__img">
+                      <img src="./assets/images/common/top-blog4.jpg" alt="海で泳ぐ黄色い魚" loading="lazy" decoding="async">
                     </div>
-                    <h4 class="blog-popular-card__title">ライセンス取得</h4>
-                  </div>
+                    <div class="blog-popular-card__body">
+                      <div class="blog-popular-card__date">
+                        <time datetime="2023-11-17">2023.11.17</time>
+                      </div>
+                      <h4 class="blog-popular-card__title">ライセンス取得</h4>
+                    </div>
+                  </a>
                 </li>
-                <li class="blog-popular-card">
-                  <div class="blog-popular-card__img">
-                    <img src="./assets/images/common/top-blog2.jpg" alt="海で泳ぐ黄色い魚" loading="lazy" decoding="async">
-                  </div>
-                  <div class="blog-popular-card__body">
-                    <div class="blog-popular-card__date">
-                      <time datetime="2023-11-17">2023.11.17</time>
+                <li class="blog-popular-cards__item blog-popular-card">
+                  <a href="" class="blog-popular-card__link">
+                    <div class="blog-popular-card__img">
+                      <img src="./assets/images/common/top-blog2.jpg" alt="海で泳ぐ黄色い魚" loading="lazy" decoding="async">
                     </div>
-                    <h4 class="blog-popular-card__title">ウミガメと泳ぐ</h4>
-                  </div>
+                    <div class="blog-popular-card__body">
+                      <div class="blog-popular-card__date">
+                        <time datetime="2023-11-17">2023.11.17</time>
+                      </div>
+                      <h4 class="blog-popular-card__title">ウミガメと泳ぐ</h4>
+                    </div>
+                  </a>
                 </li>
-                <li class="blog-popular-card">
-                  <div class="blog-popular-card__img">
-                    <img src="./assets/images/common/top-blog3.jpg" alt="海で泳ぐ黄色い魚" loading="lazy" decoding="async">
-                  </div>
-                  <div class="blog-popular-card__body">
-                    <div class="blog-popular-card__date">
-                      <time datetime="2023-11-17">2023.11.17</time>
+                <li class="blog-popular-cards__item blog-popular-card">
+                  <a href="" class="blog-popular-card__link">
+                    <div class="blog-popular-card__img">
+                      <img src="./assets/images/common/top-blog3.jpg" alt="海で泳ぐ黄色い魚" loading="lazy" decoding="async">
                     </div>
-                    <h4 class="blog-popular-card__title">カクレクマノミ</h4>
-                  </div>
+                    <div class="blog-popular-card__body">
+                      <div class="blog-popular-card__date">
+                        <time datetime="2023-11-17">2023.11.17</time>
+                      </div>
+                      <h4 class="blog-popular-card__title">カクレクマノミ</h4>
+                    </div>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -279,7 +285,7 @@
                 <h2 class="aside__heading-title">口コミ</h2>
               </div>
               <ul class="aside__items blog-voice-cards">
-                <li class="blog-voice-card">
+                <li class="blog-voice-cards__item blog-voice-card">
                   <div class="blog-voice-card__img">
                     <img src="./assets/images/common/blog-voice1.jpg" alt="笑顔で仲良く座っている男性と女性" loading="lazy"
                       decoding="async">

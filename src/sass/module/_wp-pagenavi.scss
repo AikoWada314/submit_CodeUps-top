@@ -2,19 +2,6 @@
 
 /*wp-pagenavi base*/
 
-.wp-pagenavi {
-  margin-top:  rem(80);
-}
-
-.wp-pagenavi.wp-pagenavi--mt{
-  margin-top:  rem(40);
-}
-
-.wp-pagenavi.wp-pagenavi--post{
-  @include mq('md'){
-    margin-top:  rem(72);
-  }
-}
 
 .wp-pagenavi__inner{
   display: flex;
@@ -56,8 +43,8 @@
 }
 
 .wp-pagenavi a:hover{
-  background-color: #DDF0F1;
-  color: $green;
+  background-color: $green;
+  color: $white;
 }
 
 .wp-pagenavi span.current{
@@ -102,25 +89,37 @@
   color: #fff;
  }
 
- .prevpostslink.prevpostslink--hover:hover .wp-pagenavi-arrow:before,
- .nextpostslink.nextpostslink--hover:hover .wp-pagenavi-arrow:before{
-  content: '';
-  width:  rem(8);
-  height:  rem(8);
-  border: 0;
-  border-top: solid  rem(1) $white;
-  border-left: solid rem(1) $white;
-  transform: rotate(-45deg);
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  margin: auto;  
+//  .prevpostslink.prevpostslink--hover:hover .wp-pagenavi-arrow:before,
+//  .nextpostslink.nextpostslink--hover:hover .wp-pagenavi-arrow:before{
+//   content: '';
+//   width:  rem(8);
+//   height:  rem(8);
+//   border: 0;
+//   border-top: solid  rem(1) $white;
+//   border-left: solid rem(1) $white;
+//   transform: rotate(-45deg);
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   margin: auto;  
+//  }
+
+ .wp-pagenavi span:hover{
+  color: $white;
  }
 
- .prevpostslink.prevpostslink--hover:hover .wp-pagenavi-arrow.wp-pagenavi-arrow-next::before,
- .nextpostslink.nextpostslink--hover:hover .wp-pagenavi-arrow.wp-pagenavi-arrow-next::before {
-  transform: rotate(135deg);
-  right:0; 
-  left:initial;
+//  .prevpostslink.prevpostslink--hover:hover .wp-pagenavi-arrow.wp-pagenavi-arrow-next::before,
+//  .nextpostslink.nextpostslink--hover:hover .wp-pagenavi-arrow.wp-pagenavi-arrow-next::before {
+//   transform: rotate(135deg);
+//   right:0; 
+//   left:initial;
+
+//  }
+
+.prevpostslink:hover .wp-pagenavi-arrow::before,
+.nextpostslink:hover .wp-pagenavi-arrow::before{
+  border-top: solid  rem(1) $white;
+  border-left: solid rem(1) $white;
  }
+

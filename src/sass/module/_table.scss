@@ -3,7 +3,7 @@
 .table {
   @include mq('md'){
     display: flex;
-    max-width:  rem(700);
+    
   } 
 }
 

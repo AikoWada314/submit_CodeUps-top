@@ -20,7 +20,8 @@
   }
 }
 
-.article__img {
+.article__img,
+.article div img {
   position: relative;
   aspect-ratio: 345/231;
   margin-top:  rem(24);
@@ -38,7 +39,7 @@
   object-fit: cover;
 }
 
-.article__text {
+.article p{
   color: #000;
   font-size:   rem(16);
   line-height: calc(24 /16 );
@@ -48,23 +49,23 @@
   }
 }
 
-.artilce__lists {
+.article ul {
   margin-top:  rem(24);
   @include mq('md'){
     margin-top:  rem(40);
   }
 }
 
-.article__list {
+.article li{
   position: relative;
   padding-left:  rem(27);
 }
 
-.article__list:not(:first-child){
+.article li:not(:first-child){
   margin-top:  rem(4);
 }
 
-.article__list::before{
+.article li::before{
   display: inline-block;
   content:"";
   background-image: url(../images/common/hitode-green.png);

@@ -7,13 +7,9 @@
   }
 }
 
-.l-page-margin.l-page-about{
+.l-page-about{
   
   @include mq('md'){
     margin-top:  rem(230);
   }
-}
-
-.l-page-margin.page-price{
-  margin-top:  rem(140);
 }

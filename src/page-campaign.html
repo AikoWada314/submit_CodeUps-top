@@ -171,14 +171,14 @@
   </header>
 
   <main>
-    <section class="page-mv page-campaign__mv">
-      <div class="page-campaign__img">
+    <section class="page-mv">
+      <div class="page-mv__img">
         <picture>
           <source srcset="./assets/images/common/page-campaign-mv.jpg" media="(min-width:768px)">
           <img src="./assets/images/common/page-campaign-mv-sp.jpg" alt="海の中で泳ぐ二匹の魚" loading="lazy" decoding="async">
         </picture>
       </div>
-      <div class="page-mv__title page-campaign__title">
+      <div class="page-mv__title">
         <h2>Campaign</h2>
       </div>
     </section>
@@ -189,27 +189,18 @@
       </div>
     </div>
 
-    <section class="page-campaign__tab l-page-margin">
-      <div class="inner page-inner page-campaign__tab-inner">
-        <div class="tab">
-          <!-- タブを構成するブロック -->
-          <div class="tab-list">
-            <div class="tab-list-item__group">
-              <button class="tab-list-item is-btn-active">ALL</button>
-              <button class="tab-list-item">ライセンス講習</button>
+    <section class="page-campaign l-page-margin">
+      <div class="inner page-inner">
+        <div class="page-campaign__tab">
+          <div class="tab">
+            <div class="tab__list">
+              <button class="tab__list-item is-btn-active">ALL</button>
+              <button class="tab__list-item">ライセンス講習</button>
+              <button class="tab__list-item">ファンダイビング</button>
+              <button class="tab__list-item">体験ダイビング</button>
             </div>
-            <div class="tab-list-item__group">
-              <button class="tab-list-item">ファンダイビング</button>
-              <button class="tab-list-item">体験ダイビング</button>
-            </div>
-          </div>
-
-          <!-- コンテンツを構成するブロック -->
-          <div class="tab-contents-wrap">
-            <!-- ALL -->
-            <div class="tab-contents is-campaign-contents-active">
-              <div class="tab-contents__campaign-card campaign-cards__item campaign-card">
-
+            <div class="tab__contents-items campaign-cards">
+              <div class="campaign-cards__item campaign-card">
                 <div class="campaign-card__img">
                   <img src="./assets/images/common/top-campaign-sp1.jpg" alt="海で泳ぐたくさんの魚" loading="lazy"
                     decoding="async">
@@ -235,7 +226,7 @@
                   </div>
                 </div>
               </div>
-              <div class="tab-contents__campaign-card campaign-campaign-cards__item campaign-card">
+              <div class="campaign-cards__item campaign-card">
                 <div class="campaign-card__img">
                   <img src="./assets/images/common/top-campaign-sp2.jpg" alt="海岸に泊まる一艘の船" loading="lazy"
                     decoding="async">
@@ -261,7 +252,7 @@
                   </div>
                 </div>
               </div>
-              <div class="tab-contents__campaign-card campaign-campaign-cards__item campaign-card">
+              <div class="campaign-cards__item campaign-card">
                 <div class="campaign-card__img">
                   <img src="./assets/images/common/top-campaign-sp3.jpg" alt="海の中で泳ぐたくさんのクラゲ" loading="lazy"
                     decoding="async">
@@ -287,7 +278,7 @@
                   </div>
                 </div>
               </div>
-              <div class="tab-contents__campaign-card campaign-campaign-cards__item campaign-card">
+              <div class="campaign-cards__item campaign-card">
                 <div class="campaign-card__img">
                   <img src="./assets/images/common/top-campaign-sp4.jpg" alt="海から顔を出すダイバー" loading="lazy"
                     decoding="async">
@@ -314,124 +305,7 @@
                 </div>
               </div>
             </div>
-            <!-- ライセンス講習 -->
-            <div class="tab-contents">
-              <div class="tab-contents__campaign-card campaign-campaign-cards__item campaign-card">
-
-                <div class="campaign-card__img">
-                  <img src="./assets/images/common/top-campaign-sp1.jpg" alt="海で泳ぐたくさんの魚" loading="lazy"
-                    decoding="async">
-                </div>
-                <div class="campaign-card__content">
-                  <div class="campaign-card__tag tag">
-                    <p class="tag__text">ライセンス講習</p>
-                  </div>
-                  <h3 class="campaign-card__title">ライセンス取得</h3>
-                  <p class="campaign-card__text">全部コミコミ(お一人様)</p>
-                  <div class="campaign-card__price">
-                    <p class="campaign-card__price-before"><span>¥56,000</span></p>
-                    <p class="campaign-card__price-after">¥46,000</p>
-                  </div>
-                  <p class="campaign-card__detailText">
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                  </p>
-                  <p class="campaign-card__date">2023/6/1-9/30</p>
-                  <p class="campaign-card__this">ご予約・お問い合わせはコチラ</p>
-                  <div class="campaign-card__btn">
-                    <a href="#" class="btn slide"><span>View more</span></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- ファンダイビング -->
-            <div class="tab-contents">
-              <div class="tab-contents__campaign-card campaign-campaign-cards__item campaign-card">
-
-                <div class="campaign-card__img">
-                  <img src="./assets/images/common/top-campaign-sp4.jpg" alt="海から顔を出すダイバー" loading="lazy"
-                    decoding="async">
-                </div>
-                <div class="campaign-card__content">
-                  <div class="campaign-card__tag tag">
-                    <p class="tag__text">ファンダイビング</p>
-                  </div>
-                  <h3 class="campaign-card__title">貸切ファンダイビング</h3>
-                  <p class="campaign-card__text">全部コミコミ(お一人様)</p>
-                  <div class="campaign-card__price">
-                    <p class="campaign-card__price-before"><span>¥20,000</span></p>
-                    <p class="campaign-card__price-after">¥16,000</p>
-                  </div>
-                  <p class="campaign-card__detailText">
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                  </p>
-                  <p class="campaign-card__date">2023/6/1-9/30</p>
-                  <p class="campaign-card__this">ご予約・お問い合わせはコチラ</p>
-                  <div class="campaign-card__btn">
-                    <a href="#" class="btn slide"><span>View more</span></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 体験ダイビング -->
-            <div class="tab-contents">
-              <div class="tab-contents__campaign-card campaign-campaign-cards__item campaign-card">
-
-                <div class="campaign-card__img">
-                  <img src="./assets/images/common/top-campaign-sp2.jpg" alt="海岸に泊まる一艘の船" loading="lazy"
-                    decoding="async">
-                </div>
-                <div class="campaign-card__content">
-                  <div class="campaign-card__tag tag">
-                    <p class="tag__text">体験ダイビング</p>
-                  </div>
-                  <h3 class="campaign-card__title">貸切体験ダイビング</h3>
-                  <p class="campaign-card__text">全部コミコミ(お一人様)</p>
-                  <div class="campaign-card__price">
-                    <p class="campaign-card__price-before"><span>¥24,000</span></p>
-                    <p class="campaign-card__price-after">¥18,000</p>
-                  </div>
-                  <p class="campaign-card__detailText">
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                  </p>
-                  <p class="campaign-card__date">2023/6/1-9/30</p>
-                  <p class="campaign-card__this">ご予約・お問い合わせはコチラ</p>
-                  <div class="campaign-card__btn">
-                    <a href="#" class="btn slide"><span>View more</span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-contents__campaign-card campaign-campaign-cards__item campaign-card">
-
-                <div class="campaign-card__img">
-                  <img src="./assets/images/common/top-campaign-sp3.jpg" alt="海の中で泳ぐたくさんのクラゲ" loading="lazy"
-                    decoding="async">
-                </div>
-                <div class="campaign-card__content">
-                  <div class="campaign-card__tag tag">
-                    <p class="tag__text">体験ダイビング</p>
-                  </div>
-                  <h3 class="campaign-card__title">ナイトダイビング</h3>
-                  <p class="campaign-card__text">全部コミコミ(お一人様)</p>
-                  <div class="campaign-card__price">
-                    <p class="campaign-card__price-before"><span>¥10,000</span></p>
-                    <p class="campaign-card__price-after">¥8,000</p>
-                  </div>
-                  <p class="campaign-card__detailText">
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
-                    ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-                  </p>
-                  <p class="campaign-card__date">2023/6/1-9/30</p>
-                  <p class="campaign-card__this">ご予約・お問い合わせはコチラ</p>
-                  <div class="campaign-card__btn">
-                    <a href="#" class="btn slide"><span>View more</span></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          </div>            
         </div>
       </div>
     </section>

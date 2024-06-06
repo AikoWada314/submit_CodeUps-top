@@ -35,25 +35,5 @@
   }
 }
 
-.page-blog__item{
 
-}
 
-.page-blog__item:not(:first-child) {
-  margin-top:  rem(40);
-  @include mq('md'){
-    margin-top:  rem(0);
-  }  
-}
-
-.page-blog__main-detail{
-
-}
-
-.page-blog__articles{
-
-}
-
-.page-blog__article{
-  
-}

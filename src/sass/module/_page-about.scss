@@ -4,10 +4,6 @@
   position: relative;
   max-width:  rem(600);
   
-  @include mq('md'){
-    max-width:  rem(1130);
-  }
-  
 }
 
 .page-about__inner::before{
@@ -29,12 +25,7 @@
   }
 }
 
-.page-about-gallery{
-  margin-top:  rem(37);
-  @include mq('md'){
-    margin-top:  rem(120);
-  }
-}
+
 .page-about-gallery__modal{
   margin-top:  rem(40);
   @include mq('md'){
@@ -199,15 +190,6 @@
 }
 
 
-
-
-.page-about__sp-none{
-  display: none;
-  @include mq('md'){
-    display: block;
-  }
-}
-
 .page-about__copy--position{
   position: absolute;
   top:  rem(25);
@@ -225,3 +207,11 @@
     top:  rem(20);
   }
 }
+
+.page-about-gallery__inner{
+  max-width:  rem(600);
+  @include mq('md'){
+    max-width:  rem(1130);
+  }
+}
+

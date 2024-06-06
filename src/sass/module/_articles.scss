@@ -1,0 +1,8 @@
+@use 'global' as *;
+
+.articles__item:not(:first-child) {
+    margin-top:  rem(40);
+    @include mq('md'){
+      margin-top:  rem(0);
+    }  
+  }

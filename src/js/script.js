@@ -135,30 +135,6 @@ box.each(function(){
 });
 
 
-// Campaign-Tab
-$(function(){
-  $('.tab-list-item').on('click', function(){
-    let index = $('.tab-list-item').index(this);
-
-    $('.tab-list-item').removeClass('is-btn-active');
-    $(this).addClass('is-btn-active');
-    $('.tab-contents').removeClass('is-campaign-contents-active');
-    $('.tab-contents').eq(index).addClass('is-campaign-contents-active');
-  });
-}); 
-
-// Voice-Tab
-$(function(){
-  $('.voice-tab-list-item').on('click', function(){
-    let index = $('.voice-tab-list-item').index(this);
-
-    $('.voice-tab-list-item').removeClass('is-btn-active');
-    $(this).addClass('is-btn-active');
-    $('.voice-tab-contents').removeClass('is-contents-active');
-    $('.voice-tab-contents').eq(index).addClass('is-contents-active');
-  });
-}); 
-
 
 // モーダル
 // 変数に要素を入れる
@@ -171,10 +147,17 @@ var trigger = $('.js-modal'),
 
 // 『モーダルを開くボタン』をクリックしたら、『モーダル本体』を表示
 $(trigger).click(function() {
-  $(wrapper).fadeIn(400);
+  $(wrapper).fadeIn(400).css('z-index', 6000);
 
   // クリックした画像のHTML要素を取得して、置き換える
   $(content).html($(this).prop('outerHTML'));
+
+  // 画像に object-fit: contain を適用
+  $(content).find('img').css('object-fit', 'contain');
+  $(content).find('img').css('height', 'calc(100vh - 40px)');
+
+  // .modal__image に height: calc(100% - 40px); を適用
+  $(content).find('.modal__image--ar').css('height', 'calc(100vh - 40px)');
 
   // スクロール位置を戻す
   $(container).scrollTop(0);
@@ -190,6 +173,7 @@ $(layer).add(close).click(function() {
   // サイトのスクロール禁止を解除する
   $('html, body').removeAttr('style');
 });
+
 
 
 // Information Tab
