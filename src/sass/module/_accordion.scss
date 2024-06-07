@@ -23,7 +23,7 @@
   } 
 }
 
-.accordion__title:not(:first-child){
+.accordion__wrapper:not(:first-child){
   margin-top:  rem(40);
   @include mq('md'){
     margin-top:  rem(40);
@@ -83,7 +83,7 @@
   padding:  rem(18)  rem(16);
   border: 1px solid $green;
   margin-inline: auto;
-  transition-duration: .3s;
+  display: block;
   
   @include mq('md'){
      padding:rem(37)  rem(38);
@@ -96,5 +96,4 @@
   padding-top: 12px;
   margin-top: 12px;
   display: none;
-  transition-duration: .3s;
 }

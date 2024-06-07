@@ -11,7 +11,8 @@
 
   @include mq('md'){
     display: flex;
-    gap:  rem(32);
+    gap:  rem(16) rem(32);
+    flex-wrap: wrap;
   }
 }
 
@@ -28,6 +29,7 @@
   line-height: calc(22 / 14);
   border-radius: 0 ;
   background-color: #fff;
+  transition: all 0.3s ease;
   @include mq('md'){
     width:  rem(162);
 
@@ -39,7 +41,7 @@
   color: $white;
 }
 
-.tab__contents-items{
+.page-campaign-items{
   margin-top:  rem(40);
 
 }

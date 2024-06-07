@@ -41,6 +41,16 @@ cursor: pointer;
     }
 }
 
+.modal__image:nth-of-type(6n+2),
+.modal__image:nth-of-type(6n+3),
+.modal__image:nth-of-type(6n+4),
+.modal__image:nth-of-type(6n+5) {
+    @include mq(md) {
+        grid-column: span 6;
+        grid-row: span 1;
+    }
+}
+
 .modal__image--mt{
   margin-top:  rem(8);
 }
