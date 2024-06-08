@@ -287,7 +287,7 @@ function scrollToSection() {
 // アコーディオン
 $(function () {
   $('.jsAccordionTitle').on('click', function () {
-    $(this).next().toggleClass('is-open', 300);
+    $(this).next().slideToggle();
     $(this).toggleClass('is-active', 300);
   });
 });
