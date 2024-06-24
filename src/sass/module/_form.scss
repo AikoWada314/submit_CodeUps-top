@@ -241,7 +241,7 @@ textarea.is-error{
 			border-left: $check-weight solid $check-bg-cr-inner;
 			border-bottom: $check-weight solid $check-bg-cr-inner;
 			@include mq('md'){
-				top: 45%!important;
+				top: 47%!important;
 				left:  rem(-8)!important;
 			}
 		}
@@ -423,3 +423,70 @@ input::placeholder{
 		margin-top: 0;
   }
 }
+
+// WP
+input[type=submit]{
+	color: $white !important;
+	font-size:   rem(14)!important;
+	font-family: $base-font!important;
+	padding: rem(16) rem(112) rem(16) rem(56);
+
+}
+
+.wpcf7-spinner{
+	display: none!important;
+}
+
+//バリデーション
+.wpcf7-not-valid-tip {
+	display: none
+  }
+  
+  //ラジオボタンのバリデーション対策
+  .wpcf7-form.hide_error_message .wpcf7-not-valid-tip {
+	display: none;
+  }
+  
+  //トリッキーなレイアウトのバリデーション
+  .p-formValidation .wpcf7-not-valid-tip {
+	display: none;
+  }
+  
+  .p-formValidation__error {
+	display: none;
+	margin-top: 10px;
+	color: red;
+	font-size: 16px;
+	font-weight: normal;
+  }
+  
+  .wpcf7-form:not(.hide_error_message) {
+	.p-formValidation:has(.wpcf7-not-valid-tip) .p-formValidation__error {
+	  display: block;
+	}
+  }
+
+  .wpcf7-response-output{
+    color: #C94800;
+    text-align: center;
+    position: absolute;
+    top: -100px;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 72%;
+
+}
+
+  .wpcf7-not-valid{
+	background-color:rgba(201, 72, 0, 0.2);
+	border:  rem(1) solid #C94800;
+  }
+
+  .wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output{
+	border: none;
+  }
+
+  .wpcf7 form .wpcf7-response-output{
+	margin: 0;
+	padding: 0;
+  }

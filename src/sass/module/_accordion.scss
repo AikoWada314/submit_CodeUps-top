@@ -10,7 +10,7 @@
   position: relative;
   background-color: $green;
   color: $white;
-  padding:  rem(16);
+  padding:  rem(16) rem(50) rem(16) rem(16);
   font-size:   rem(16);
   font-weight: 400;
   margin-inline: auto;
@@ -19,7 +19,7 @@
 
   @include mq('md'){
     font-size:   rem(20);
-    padding:  rem(25)  rem(40);
+    padding:  rem(25)  rem(80) rem(25) rem(40) ;
   } 
 }
 
@@ -39,7 +39,7 @@
   background-color: #fff;
   position:absolute;
   right:  rem(16);
-  top:  rem(27);
+  top:  50%;
   transition-duration: .3s;
   @include mq('md'){
     width:  rem(32);
@@ -63,7 +63,7 @@
   height:  rem(1);
   background: currentColor;
   right:  rem(16);
-  top:  rem(27);
+  top:  50%;
   transition-duration: .3s;
   @include mq('md'){
     width:  rem(32);

@@ -174,10 +174,13 @@ background-color: $green;
   padding: 0.9375rem 5.5rem 0.9375rem 2.5rem;
   position: relative;
   z-index: 1;
+  cursor: pointer;
+
 }
 
 .button--send{
-  padding: 1rem 7rem 1rem 3.5rem;
+  cursor: pointer;
+  padding: 0;
 }
 
 .button::after {
@@ -194,7 +197,7 @@ background-color: $green;
   z-index: -1;
 }
 
-.button--send span::after {
+.button--send p::after {
   background-color: #fff;
   content: "";
   display: inline-block;
@@ -204,11 +207,11 @@ background-color: $green;
   mask-size: cover;
   position: absolute;
   right: 3.5rem;
-  top: 1.125rem;
+  top:  rem(23);
   width: 2.5rem;
 }
 
-.button:hover span::after {
+.button--send:hover p::after {
   background-color: #408F95;
 }
 
@@ -244,4 +247,8 @@ background-color: $green;
 
 .button:hover::after {
   transform: scale(1, 1);
+}
+
+.button--send:hover input[type=submit]{
+  color: $green!important;
 }

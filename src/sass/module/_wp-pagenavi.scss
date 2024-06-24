@@ -1,10 +1,10 @@
 @use 'global' as *;
 
 
-.wp-pagenavi__inner{
+.wp-pagenavi{
   display: flex;
   gap:  rem(12);
-  justify-content: space-between;
+  justify-content: center;
   margin-right: auto;
   margin-left: auto;
   max-width:  rem(344);
@@ -17,15 +17,11 @@
   }
 }
 
-.wp-pagenavi__inner.wp-pagenavi__inner--mw{
-    max-width:  rem(208);
-  
+.wp-pagenavi__inner--mw{
+    display: flex;
+    gap: 82px
 }
 
-.wp-pagenavi__number{
-  display: flex;
-  gap: rem(12);
-}
 
 .wp-pagenavi a, .wp-pagenavi span {
   display: inline-flex;
@@ -52,11 +48,12 @@
   font-weight: $bold;
  }
 
-.wp-pagenavi-arrow{
+.previouspostslink{
   position: relative;
 }
 
- .wp-pagenavi-arrow::before{
+ .previouspostslink::before,
+ .nextpostslink::before{
   content: '';
   width:  rem(8);
   height:  rem(8);
@@ -65,34 +62,38 @@
   border-left: solid rem(1) $green;
   transform: rotate(-45deg);
   position: absolute;
-  top: 0;
-  left:  rem(-2);
-  bottom: 0;
+  top:  rem(14);
+  left:  rem(16);
   margin: auto;  
  }
 
- .wp-pagenavi-arrow.wp-pagenavi-arrow-next{
+ .nextpostslink{
   position: relative;
-  left:  rem(-4);
  }
 
- .wp-pagenavi-arrow.wp-pagenavi-arrow-next::before{
+ .nextpostslink::before{
   transform: rotate(135deg);
+  left:  rem(12);
 
  }
 
- .prevpostslink.prevpostslink--hover:hover,
- .nextpostslink.nextpostslink--hover:hover{
+ .previouspostslink:hover,
+ .nextpostslink:hover{
   background-color: $green;
-  color: #fff;
+
  }
 
+ .previouspostslink:hover::before,
+ .nextpostslink:hover::before{
+  border-top: solid  rem(1) $white;
+  border-left: solid rem(1) $white;
+ }
 
  .wp-pagenavi span:hover{
   color: $white;
  }
 
-.prevpostslink:hover .wp-pagenavi-arrow::before,
+.previouspostslink:hover .wp-pagenavi-arrow::before,
 .nextpostslink:hover .wp-pagenavi-arrow::before{
   border-top: solid  rem(1) $white;
   border-left: solid rem(1) $white;

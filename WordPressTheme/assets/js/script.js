@@ -321,4 +321,24 @@ jQuery(function ($) {
       }
     });
   });
+
+  // コンタクトフォーム
+  jQuery(function ($) {
+    //バリデーション対策
+    //formタグにクラス追加
+    $(".wpcf7-form").addClass("hide_error_message");
+
+    //送信または確認ボタンをクリックしたとき
+    $(".wpcf7-confirm, .wpcf7-submit").click(function () {
+      //formからクラスを削除
+      $(".wpcf7-form").removeClass("hide_error_message");
+    });
+
+    // Contact Form 7 プルダウンのカラー変更
+    $('select option:first-child').addClass('p-formSelect__default');
+    $('select').on('change', function () {
+      var itemSelect = $(this).find('option:selected').hasClass('p-formSelect__default');
+      $(this).parents('.wpcf7-form-control-wrap').toggleClass('p-formSelect--selected', !itemSelect);
+    });
+  });
 });

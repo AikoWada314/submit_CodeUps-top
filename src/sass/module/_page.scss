@@ -22,3 +22,11 @@
     left: calc(50% - min(48.4vw,  rem(620)));
   }
 }
+
+.fish-icon.fish-icon--contact::before{
+  top:  rem(-119);
+  @include mq('md'){
+
+    top:   rem(-71) ;
+  }
+}
