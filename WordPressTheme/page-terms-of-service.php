@@ -57,7 +57,7 @@
               <p class="top-contact__text">ご予約・お問い合わせはコチラ</p>
             </div>
             <div class="top-contact__btn">
-              <a href="#" class="btn slide long"><span>Contact us</span></a>
+              <a href="<?php echo esc_url(home_url('/contact/'))?>" class="btn slide long"><span>Contact us</span></a>
             </div>
           </div>
         </div>

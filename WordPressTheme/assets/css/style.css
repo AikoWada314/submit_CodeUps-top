@@ -702,7 +702,7 @@ html.is-fixed {
 }
 
 .btn.long::before {
-	width: 12.625rem;
+	width: 12.71875rem;
 }
 
 .btn.slide {
@@ -910,6 +910,8 @@ html.is-fixed {
 
 .campaign-card {
 	box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-direction: column;
 }
 
 .campaign-card__wrapper {
@@ -950,7 +952,6 @@ html.is-fixed {
 .campaign-card__title {
 	border-bottom: 0.0625rem solid #408F95;
 	color: #0D2936;
-	flex-grow: 1;
 	font-size: 1rem;
 	font-weight: 500;
 	line-height: 1.5;
@@ -3626,6 +3627,7 @@ html {
 .campaign-card__detailText {
 	color: #0D2936;
 	display: block;
+	flex-grow: 1;
 	font-size: 1rem;
 	line-height: 1.5;
 	margin-top: 1.5rem;

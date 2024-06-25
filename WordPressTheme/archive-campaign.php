@@ -114,7 +114,7 @@
                       <p class="campaign-card__date"><?php the_field('campaign__date'); ?></p>
                       <p class="campaign-card__this">ご予約・お問い合わせはコチラ</p>
                       <div class="campaign-card__btn">
-                        <a href="#" class="btn slide"><span>View more</span></a>
+                        <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="btn slide long"><span>Contact us</span></a>
                       </div>
                     </div>
                   </div>

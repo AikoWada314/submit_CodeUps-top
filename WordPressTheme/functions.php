@@ -24,6 +24,14 @@ function custom_post_per_page($query) {
 }
 add_action('pre_get_posts', 'custom_post_per_page');
 
+function custom_taxonomy_posts_per_page($query) {
+    if ( !is_admin() && $query->is_main_query() && is_tax('campaign_cat') ) {
+        $query->set('posts_per_page', 4);
+    }
+}
+add_action('pre_get_posts', 'custom_taxonomy_posts_per_page');
+
+
 
 
 //ボイスの表示件数変更
@@ -36,6 +44,15 @@ function change_voice_posts_per_page($query) {
     }
 }
 add_action('pre_get_posts', 'change_voice_posts_per_page');
+
+
+function custom_taxonomy_posts_per_page($query) {
+    if ( !is_admin() && $query->is_main_query() && is_tax('voice_cat') ) {
+        $query->set('posts_per_page', 6);
+    }
+}
+add_action('pre_get_posts', 'custom_taxonomy_posts_per_page');
+
 
 //投稿にアイキャッチ追加
 function my_setup() {
