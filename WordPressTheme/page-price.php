@@ -8,7 +8,7 @@
         </picture>
       </div>
       <div class="page-mv__title">
-        <h2>Price</h2>
+        <h1>Price</h1>
       </div>
     </section>
 

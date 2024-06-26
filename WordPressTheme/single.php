@@ -8,7 +8,7 @@
         </picture>
       </div>
       <div class="page-mv__title">
-        <h2>Blog</h2>
+        <h1>Blog</h1>
       </div>
     </section>
 
@@ -174,29 +174,31 @@
         if ($latest_posts_query->have_posts()) :
             while ($latest_posts_query->have_posts()) : $latest_posts_query->the_post();
                 ?>
-                <li class="blog-campaign-card__item card">
-                    <div class="card__wrapper">
-                        <a href="<?php the_permalink(); ?>" class="card__link">
-                            <div class="card__img card__img--ar">
-                                <?php
-                                $campaign_img = get_field('campaign__img');
-                                if ($campaign_img) {
-                                    $campaign_img_url = is_array($campaign_img) ? $campaign_img['url'] : $campaign_img;
-                                    ?>
-                                    <img src="<?php echo esc_url($campaign_img_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" loading="lazy" decoding="async">
-                                <?php } ?>
-                            </div>
-                            <div class="card__content card__content--pb">
-                                <h3 class="card__title card__title--center"><?php the_title(); ?></h3>
-                                <p class="card__text card__text--mt">全部コミコミ(お一人様)</p>
-                                <div class="card__price">
-                                    <p class="card__price-before card__price-before--fz"><span>¥<?php the_field('campaign__before-price'); ?></span></p>
-                                    <p class="card__price-after card__price-after--fz">¥<?php the_field('campaign__after-price'); ?></p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </li>
+                               <li class="blog-campaign-card__item card">
+    <div class="card__wrapper">
+        <a href="<?php the_permalink(); ?>" class="card__link">
+            <div class="card__img card__img--ar">
+                <?php
+                $campaign_img = get_field('campaign__img');
+                if ($campaign_img) {
+                    $campaign_img_url = is_array($campaign_img) ? $campaign_img['url'] : $campaign_img;
+                } else {
+                    $campaign_img_url = get_theme_file_uri('/assets/images/common/noimage.jpg');
+                }
+                ?>
+                <img src="<?php echo esc_url($campaign_img_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" loading="lazy" decoding="async">
+            </div>
+            <div class="card__content card__content--pb">
+                <h3 class="card__title card__title--center"><?php the_title(); ?></h3>
+                <p class="card__text card__text--mt">全部コミコミ(お一人様)</p>
+                <div class="card__price">
+                    <p class="card__price-before card__price-before--fz"><span>¥<?php the_field('campaign__before-price'); ?></span></p>
+                    <p class="card__price-after card__price-after--fz">¥<?php the_field('campaign__after-price'); ?></p>
+                </div>
+            </div>
+        </a>
+    </div>
+</li>
                 <?php
             endwhile;
             wp_reset_postdata();

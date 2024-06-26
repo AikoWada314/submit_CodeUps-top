@@ -12,14 +12,18 @@
 <body <?php body_class(); ?>>
   <header class="header">
     <div class="header__inner">
-      <h1 class="header__logo">
-        <a href="<?php echo esc_url(home_url('/'))?>" class="header__logoLink">
-          <picture>
-            <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps.svg" media="(min-width:768px)">
-            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps-sp.png" alt="CodeUps">
-          </picture>
-        </a>
-      </h1>
+    <?php $tag = is_front_page() ? 'h1' : 'div'; ?>
+<<?php echo $tag; ?> class="header__logo">
+  <a href="<?php echo esc_url(home_url('/')); ?>" class="header__logoLink">
+    <picture class="header__logoPicture">
+      <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps.svg" media="(min-width:768px)">
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/CodeUps-sp.png" alt="CodeUpsのロゴ" class="header__logoImg">
+    </picture>
+  </a>
+</<?php echo $tag; ?>>
+
+
+      
       <div class="header__drawer hamburger js-hamburger">
         <span></span>
         <span></span>

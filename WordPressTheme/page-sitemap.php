@@ -8,15 +8,12 @@
         </picture>
       </div>
       <div class="page-mv__title">
-        <h2>Site MAP</h2>
+        <h1>Site MAP</h1>
       </div>
     </section>
 
-    <div class="breadcrumb">
-      <div class="inner">
-        <div>TOP > サイトマップ</div>
-      </div>
-    </div>
+    <?php get_template_part('breadcrumb'); ?>
+
 
     <div class="page-sitemap l-page-margin">
       <div class="page-sitemap__inner inner fish-icon">

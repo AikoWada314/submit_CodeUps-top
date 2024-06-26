@@ -10,7 +10,7 @@
         </picture>
       </div>
       <div class="page-mv__title">
-        <h2>About us</h2>
+        <h1>About us</h1>
       </div>
     </section>
 

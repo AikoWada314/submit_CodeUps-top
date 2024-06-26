@@ -1,11 +1,8 @@
 <?php get_header(); ?>
 
 <main>
-    <div class="breadcrumb breadcrumb--404">
-      <div class="inner">
-        <div>TOP > 404</div>
-      </div>
-    </div>
+<?php get_template_part('breadcrumb'); ?>
+
 
     <section class="page-error">
       <div class="page-error__inner inner">

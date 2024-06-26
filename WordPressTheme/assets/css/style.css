@@ -2237,7 +2237,7 @@ input[type=submit] {
 	width: 100%;
 }
 
-.page-mv__title h2 {
+.page-mv__title h1 {
 	color: #fff;
 	font-family: "Lato", sans-serif;
 	font-size: 2.5rem;
@@ -4197,7 +4197,7 @@ select {
 	max-height: 34.25rem;
 }
 
-.page-mv__title h2 {
+.page-mv__title h1 {
 	font-size: 5rem;
 	line-height: 1.25;
 }

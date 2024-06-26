@@ -9,7 +9,7 @@
         </picture>
       </div>
       <div class="page-mv__title">
-        <h2>Privacy Policy</h2>
+        <h1>Privacy Policy</h1>
       </div>
     </section>
 

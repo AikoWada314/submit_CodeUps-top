@@ -9,7 +9,7 @@
         </picture>
       </div>
       <div class="page-mv__title">
-        <h2>FAQ</h2>
+        <h1>FAQ</h1>
       </div>
     </section>
 

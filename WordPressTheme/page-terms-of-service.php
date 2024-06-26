@@ -9,7 +9,7 @@
     </picture>
     </div>
     <div class="page-mv__title">
-    <h2>Terms of Service</h2>
+    <h1>Terms of Service</h1>
     </div>
 </section>
 

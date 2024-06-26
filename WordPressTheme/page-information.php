@@ -8,7 +8,7 @@
         </picture>
       </div>
       <div class="page-mv__title">
-        <h2>Information</h2>
+        <h1>Information</h1>
       </div>
     </section>
 
