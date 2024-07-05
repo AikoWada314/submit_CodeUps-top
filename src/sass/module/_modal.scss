@@ -32,10 +32,11 @@
 
 .modal__image:nth-of-type(6n+1),
 .modal__image:nth-of-type(6n+6) {
+  aspect-ratio: 492/761;
+
     @include mq(md) {
       grid-column: span 6;
       grid-row: span 2;
-      aspect-ratio: 492/761;
 
     }
 }

@@ -57,52 +57,56 @@
         ?>
                 </div>
             </div>
-
             <div class="page-campaign__items campaign-cards">
                 <?php
-      // メインクエリのループ
-      if (have_posts()) :
-          while (have_posts()) : the_post();
-      ?>
+    // メインクエリのループ
+    if (have_posts()):
+        while (have_posts()): the_post();
+            ?>
                 <div class="campaign-cards__item campaign-card">
                     <div class="campaign-card__img">
                         <?php
-              $campaign_img = get_field('campaign__img');
-              if ($campaign_img) {
-                  $campaign_img_url = is_array($campaign_img) ? $campaign_img['url'] : $campaign_img;
-              ?>
+                    $campaign_img = get_field('campaign__img');
+                    if ($campaign_img):
+                        $campaign_img_url = is_array($campaign_img) ? $campaign_img['url'] : $campaign_img;
+                        ?>
                         <img src="<?php echo esc_url($campaign_img_url); ?>"
                             alt="<?php echo esc_attr(get_the_title()); ?>" loading="lazy" decoding="async">
-                        <?php } else { ?>
+                        <?php else: ?>
                         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg"
                             alt="<?php echo esc_attr(get_the_title()); ?>" loading="lazy" decoding="async">
-                        <?php } ?>
+                        <?php endif; ?>
                     </div>
 
                     <div class="campaign-card__content">
                         <div class="campaign-card__tag tag">
                             <?php
-                $terms = get_the_terms(get_the_ID(), 'campaign_cat');
-                if ($terms && !is_wp_error($terms)) :
-                    foreach ($terms as $term) :
-                ?>
+                        $terms = get_the_terms(get_the_ID(), 'campaign_cat');
+                        if ($terms && !is_wp_error($terms)):
+                            foreach ($terms as $term):
+                                ?>
                             <p class="tag__text"><?php echo esc_html($term->name); ?></p>
-                            <?php
-                    endforeach;
-                endif;
-                ?>
+                            <?php endforeach; ?>
+                            <?php endif; ?>
                         </div>
                         <h3 class="campaign-card__title"><?php the_title(); ?></h3>
                         <p class="campaign-card__text">全部コミコミ(お一人様)</p>
 
                         <div class="campaign-card__price">
+                            <?php if (get_field('campaign__before-price')): ?>
                             <p class="campaign-card__price-before">
-                                <span>¥<?php the_field('campaign__before-price'); ?></span></p>
+                                <span>¥<?php the_field('campaign__before-price'); ?></span>
+                            </p>
+                            <?php endif; ?>
                             <p class="campaign-card__price-after">¥<?php the_field('campaign__after-price'); ?></p>
                         </div>
+                        <?php if (get_field('campaign__text')): ?>
                         <p class="campaign-card__detailText"><?php echo nl2br(esc_html(get_field('campaign__text'))); ?>
                         </p>
+                        <?php endif; ?>
+                        <?php if (get_field('campaign__date')): ?>
                         <p class="campaign-card__date"><?php the_field('campaign__date'); ?></p>
+                        <?php endif; ?>
                         <p class="campaign-card__this">ご予約・お問い合わせはコチラ</p>
                         <div class="campaign-card__btn">
                             <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="btn slide long"><span>Contact
@@ -110,15 +114,13 @@
                         </div>
                     </div>
                 </div>
-                <?php
-          endwhile;
-      else :
-      ?>
+                <?php endwhile; ?>
+                <?php else: ?>
                 <p>現在、キャンペーンはありません。</p>
-                <?php
-      endif;
-      ?>
+                <?php endif; ?>
             </div>
+
+
         </div>
     </section>
 

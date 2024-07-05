@@ -19,101 +19,103 @@
 
     <section class="l-page-margin page-price">
         <div class="page-price__inner inner">
+
+            <?php
+        global $post;
+
+        // ライセンス講習のデータ取得
+        $licenses = SCF::get('license', $post->ID);
+        $has_license = !empty($licenses) && array_filter($licenses, function($license) {
+            return !empty(trim($license['license__course'])) && trim($license['license__course']) !== '\\' && !empty(trim($license['license__price'])) && trim($license['license__price']) !== '\\';
+        });
+        if ($has_license): ?>
             <div id="licenseDiving" class="page-price__container table">
                 <div class="table__category">
                     <h3>ライセンス講習</h3>
                 </div>
                 <table>
-                    <?php
-    global $post;
-    $licenses = SCF::get('license', $post->ID);
-    if (!empty($licenses)) :
-        foreach ($licenses as $license) : ?>
+                    <?php foreach ($licenses as $license): ?>
                     <tr class="table__row">
                         <td class="table__course-title"><?php echo nl2br(esc_html($license['license__course'])); ?></td>
                         <td class="table__course-price">¥<?php echo nl2br(esc_html($license['license__price'])); ?></td>
                     </tr>
-                    <?php endforeach;
-    else : ?>
-                    <tr class="table__row">
-                        <td colspan="2">ライセンス情報が見つかりませんでした。</td>
-                    </tr>
-                    <?php endif; ?>
+                    <?php endforeach; ?>
                 </table>
-
             </div>
+            <?php endif; ?>
+
+            <?php
+        // 体験ダイビングのデータ取得
+        $experiences = SCF::get('experience', $post->ID);
+        $has_experience = !empty($experiences) && array_filter($experiences, function($experience) {
+            return !empty(trim($experience['experience__course'])) && trim($experience['experience__course']) !== '\\' && !empty(trim($experience['experience__price'])) && trim($experience['experience__price']) !== '\\';
+        });
+        if ($has_experience): ?>
             <div id="experienceDiving" class="page-price__container table">
                 <div class="table__category table__category--pt">
                     <h3>体験ダイビング</h3>
                 </div>
                 <table>
-                    <?php
-    global $post;
-    $experiences = SCF::get('experience', $post->ID);
-    if (!empty($experiences)) :
-        foreach ($experiences as $experience) : ?>
+                    <?php foreach ($experiences as $experience): ?>
                     <tr class="table__row">
                         <td class="table__course-title">
                             <?php echo nl2br(esc_html($experience['experience__course'])); ?></td>
                         <td class="table__course-price">
                             ¥<?php echo nl2br(esc_html($experience['experience__price'])); ?></td>
                     </tr>
-                    <?php endforeach;
-    else : ?>
-                    <tr class="table__row">
-                        <td colspan="2">ライセンス情報が見つかりませんでした。</td>
-                    </tr>
-                    <?php endif; ?>
+                    <?php endforeach; ?>
                 </table>
-
             </div>
+            <?php endif; ?>
+
+            <?php
+        // ファンダイビングのデータ取得
+        $funs = SCF::get('fun', $post->ID);
+        $has_fun = !empty($funs) && array_filter($funs, function($fun) {
+            return !empty(trim($fun['fun__course'])) && trim($fun['fun__course']) !== '\\' && !empty(trim($fun['fun__price'])) && trim($fun['fun__price']) !== '\\';
+        });
+        if ($has_fun): ?>
             <div id="funDiving" class="page-price__container table">
                 <div class="table__category table__category--pt">
                     <h3>ファンダイビング</h3>
                 </div>
                 <table>
-                    <?php
-    global $post;
-    $funs = SCF::get('fun', $post->ID);
-    if (!empty($funs)) :
-        foreach ($funs as $fun) : ?>
+                    <?php foreach ($funs as $fun): ?>
                     <tr class="table__row">
                         <td class="table__course-title"><?php echo nl2br(esc_html($fun['fun__course'])); ?></td>
                         <td class="table__course-price">¥<?php echo nl2br(esc_html($fun['fun__price'])); ?></td>
                     </tr>
-                    <?php endforeach;
-    else : ?>
-                    <tr class="table__row">
-                        <td colspan="2">ライセンス情報が見つかりませんでした。</td>
-                    </tr>
-                    <?php endif; ?>
+                    <?php endforeach; ?>
                 </table>
-
             </div>
+            <?php endif; ?>
+
+            <?php
+        // スペシャルダイビングのデータ取得
+        $specials = SCF::get('special', $post->ID);
+        $has_special = !empty($specials) && array_filter($specials, function($special) {
+            return !empty(trim($special['special__course'])) && trim($special['special__course']) !== '\\' && !empty(trim($special['special__price'])) && trim($special['special__price']) !== '\\';
+        });
+        if ($has_special): ?>
             <div id="specialDiving" class="page-price__container table">
                 <div class="table__category">
                     <h3>スペシャルダイビング</h3>
                 </div>
                 <table>
-                    <?php
-    global $post;
-    $specials = SCF::get('special', $post->ID);
-    if (!empty($specials)) :
-        foreach ($specials as $special) : ?>
+                    <?php foreach ($specials as $special): ?>
                     <tr class="table__row">
                         <td class="table__course-title"><?php echo nl2br(esc_html($special['special__course'])); ?></td>
                         <td class="table__course-price">¥<?php echo nl2br(esc_html($special['special__price'])); ?></td>
                     </tr>
-                    <?php endforeach;
-    else : ?>
-                    <tr class="table__row">
-                        <td colspan="2">ライセンス情報が見つかりませんでした。</td>
-                    </tr>
-                    <?php endif; ?>
+                    <?php endforeach; ?>
                 </table>
             </div>
+            <?php endif; ?>
+
         </div>
     </section>
+
+
 </main>
 
 

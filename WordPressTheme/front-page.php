@@ -9,8 +9,8 @@
                     // Smart Custom Fieldsから繰り返しフィールドを取得
                     $slides = SCF::get('top-fv', get_the_ID());
 
-                    if (!empty($slides)) {
-                        foreach ($slides as $slide) {
+                    if (!empty($slides)):
+                        foreach ($slides as $slide):
                             // PC画像とSP画像のURLを取得
                             $fv_pc = !empty($slide['fv_pc']) ? wp_get_attachment_image_url($slide['fv_pc'], 'full') : '';
                             $fv_sp = !empty($slide['fv_sp']) ? wp_get_attachment_image_url($slide['fv_sp'], 'full') : '';
@@ -25,10 +25,8 @@
                             <img src="<?php echo esc_url($fv_sp); ?>" alt="青い海の中でカメが泳いでいる">
                         </picture>
                     </div>
-                    <?php
-                        }
-                    }
-                    ?>
+                    <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
                 <div class="fv_title-wrap">
                     <p class="fv_main-copy">
@@ -39,7 +37,6 @@
             </div>
         </div>
     </div>
-
 
     <section class="top-campaign l-top-campaign">
         <div class="top-campaign__inner inner">
@@ -56,53 +53,53 @@
                 <div class="swiper swiper-container js-campaign-swiper">
                     <div class="swiper-wrapper">
                         <?php
-            // クエリを修正して全ての 'campaign' 投稿を取得
-            $args = array(
-                'post_type' => 'campaign', // カスタム投稿タイプが 'campaign' である場合
-                'posts_per_page' => -1, // 全ての投稿を取得
-            );
+    // クエリを修正して全ての 'campaign' 投稿を取得
+    $args = array(
+        'post_type' => 'campaign', // カスタム投稿タイプが 'campaign' である場合
+        'posts_per_page' => -1, // 全ての投稿を取得
+    );
 
-            $campaign_query = new WP_Query($args);
+    $campaign_query = new WP_Query($args);
 
-            // カスタムクエリのループを開始
-            if ($campaign_query->have_posts()) :
-                while ($campaign_query->have_posts()) : $campaign_query->the_post(); ?>
+    // カスタムクエリのループを開始
+    if ($campaign_query->have_posts()):
+        while ($campaign_query->have_posts()): $campaign_query->the_post(); ?>
                         <div class="swiper-slide top-campaign__item card">
                             <div class="card__wrapper">
                                 <div class="card__img">
                                     <?php
-                                $campaign_img = get_field('campaign__img');
-                                if ($campaign_img) {
-                                    $campaign_img_url = is_array($campaign_img) ? $campaign_img['url'] : $campaign_img;
-                                    ?>
+                        $campaign_img = get_field('campaign__img');
+                        if ($campaign_img):
+                            $campaign_img_url = is_array($campaign_img) ? $campaign_img['url'] : $campaign_img;
+                            ?>
                                     <img src="<?php echo esc_url($campaign_img_url); ?>"
                                         alt="<?php echo esc_attr(get_the_title()); ?>" loading="lazy" decoding="async">
-                                    <?php } else { ?>
+                                    <?php else: ?>
                                     <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/noimage.jpg"
                                         alt="<?php echo esc_attr(get_the_title()); ?>" loading="lazy" decoding="async">
-                                    <?php } ?>
+                                    <?php endif; ?>
                                 </div>
 
                                 <div class="card__content">
                                     <div class="card__tag tag">
                                         <?php
-                                    $terms = get_the_terms(get_the_ID(), 'campaign_cat');
-                                    if ($terms && !is_wp_error($terms)) :
-                                        foreach ($terms as $term) :
-                                            ?>
-                                        <p class="tag__text"><?php echo esc_html($term->name); ?></p>
-                                        <?php
-                                        endforeach;
-                                    endif;
+                            $terms = get_the_terms(get_the_ID(), 'campaign_cat');
+                            if ($terms && !is_wp_error($terms)):
+                                foreach ($terms as $term):
                                     ?>
+                                        <p class="tag__text"><?php echo esc_html($term->name); ?></p>
+                                        <?php endforeach; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <h3 class="card__title"><?php the_title(); ?></h3>
                                     <p class="card__text">全部コミコミ(お一人様)</p>
 
                                     <div class="card__price">
+                                        <?php if (get_field('campaign__before-price')): ?>
                                         <p class="card__price-before">
                                             <span>¥<?php the_field('campaign__before-price'); ?></span>
                                         </p>
+                                        <?php endif; ?>
                                         <p class="card__price-after">
                                             ¥<?php the_field('campaign__after-price'); ?>
                                         </p>
@@ -110,16 +107,13 @@
                                 </div>
                             </div>
                         </div>
-                        <?php
-                endwhile;
-                wp_reset_postdata();
-            else :
-                ?>
+                        <?php endwhile; ?>
+                        <?php wp_reset_postdata(); ?>
+                        <?php else: ?>
                         <p>現在、キャンペーンはありません。</p>
-                        <?php
-            endif;
-            ?>
+                        <?php endif; ?>
                     </div>
+
                 </div>
             </div>
 
@@ -130,9 +124,9 @@
     </section>
 
     <?php
-$page_about_us_id = get_page_by_path('about-us')->ID;
-$about_text = SCF::get('about__text', $page_about_us_id);
-?>
+    $page_about_us_id = get_page_by_path('about-us')->ID;
+    $about_text = SCF::get('about__text', $page_about_us_id);
+    ?>
 
     <section class="top-about l-top-about">
         <div class="top-about__inner fish-icon inner">
@@ -168,7 +162,6 @@ $about_text = SCF::get('about__text', $page_about_us_id);
             </div>
         </div>
     </section>
-
 
     <section class="top-info l-top-info">
         <div class="top-info__inner inner">
@@ -207,23 +200,22 @@ $about_text = SCF::get('about__text', $page_about_us_id);
             </div>
             <ul class="top-blog__items blog-cards">
                 <?php
-    // Query latest 3 posts
-    $args = array(
-        'posts_per_page' => 3,
-    );
-    $latest_posts = new WP_Query($args);
+                // Query latest 3 posts
+                $args = array(
+                    'posts_per_page' => 3,
+                );
+                $latest_posts = new WP_Query($args);
 
-    if ($latest_posts->have_posts()) :
-        while ($latest_posts->have_posts()) :
-            $latest_posts->the_post();
-    ?>
+                if ($latest_posts->have_posts()):
+                    while ($latest_posts->have_posts()): $latest_posts->the_post();
+                        ?>
                 <li class="blog-cards__item blog-card">
                     <div class="blog-card__wrapper">
                         <a href="<?php the_permalink(); ?>" class="blog-card__link">
                             <div class="blog-card__img">
-                                <?php if (has_post_thumbnail()) : ?>
+                                <?php if (has_post_thumbnail()): ?>
                                 <?php the_post_thumbnail('full', ['loading' => 'lazy', 'decoding' => 'async']); ?>
-                                <?php else : ?>
+                                <?php else: ?>
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/noimage.jpg"
                                     alt="デフォルト画像" loading="lazy" decoding="async">
                                 <?php endif; ?>
@@ -239,15 +231,12 @@ $about_text = SCF::get('about__text', $page_about_us_id);
                         </a>
                     </div>
                 </li>
-                <?php
-        endwhile;
-        wp_reset_postdata(); // Reset Post Data
-    else :
-        echo '<p>投稿が見つかりませんでした。</p>';
-    endif;
-    ?>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+                <?php else: ?>
+                <p>投稿が見つかりませんでした。</p>
+                <?php endif; ?>
             </ul>
-
 
             <div class="top-blog__btn">
                 <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="btn slide"><span>View more</span></a>
@@ -265,17 +254,16 @@ $about_text = SCF::get('about__text', $page_about_us_id);
             </div>
             <ul class="top-voice__items voice-cards">
                 <?php
-    // Query latest 2 voice posts
-    $args = array(
-        'posts_per_page' => 2,
-        'post_type' => 'voice', // Adjust post type as needed
-    );
-    $latest_posts = new WP_Query($args);
+                // Query latest 2 voice posts
+                $args = array(
+                    'posts_per_page' => 2,
+                    'post_type' => 'voice', // Adjust post type as needed
+                );
+                $latest_posts = new WP_Query($args);
 
-    if ($latest_posts->have_posts()) :
-        while ($latest_posts->have_posts()) :
-            $latest_posts->the_post();
-    ?>
+                if ($latest_posts->have_posts()):
+                    while ($latest_posts->have_posts()): $latest_posts->the_post();
+                        ?>
                 <li class="voice-cards__item voice-card">
                     <div class="voice-card__top">
                         <div class="voice-card__text-wrapper">
@@ -283,21 +271,21 @@ $about_text = SCF::get('about__text', $page_about_us_id);
                                 <p class="voice-card__age"><?php the_field('voice__age'); ?></p>
                                 <div class="tag">
                                     <?php
-                                $categories = get_the_terms(get_the_ID(), 'voice_cat');
-                                if ($categories) {
-                                    foreach ($categories as $category) {
-                                        echo '<p class="tag__text">' . esc_html($category->name) . '</p>';
-                                    }
-                                }
-                                ?>
+                                            $categories = get_the_terms(get_the_ID(), 'voice_cat');
+                                            if ($categories):
+                                                foreach ($categories as $category) {
+                                                    echo '<p class="tag__text">' . esc_html($category->name) . '</p>';
+                                                }
+                                            endif;
+                                            ?>
                                 </div>
                             </div>
                             <h3 class="voice-card__title"><?php the_title(); ?></h3>
                         </div>
                         <div class="voice-card__img js-inview">
-                            <?php if (has_post_thumbnail()) : ?>
+                            <?php if (has_post_thumbnail()): ?>
                             <?php the_post_thumbnail('full', ['loading' => 'lazy', 'decoding' => 'async']); ?>
-                            <?php else : ?>
+                            <?php else: ?>
                             <img src="<?php echo get_theme_file_uri('/assets/images/common/noimage.jpg'); ?>"
                                 alt="No image" loading="lazy" decoding="async">
                             <?php endif; ?>
@@ -309,15 +297,12 @@ $about_text = SCF::get('about__text', $page_about_us_id);
                         </p>
                     </div>
                 </li>
-                <?php
-        endwhile;
-        wp_reset_postdata(); // Reset Post Data
-    else :
-        echo '<p>まだ投稿がありません。</p>';
-    endif;
-    ?>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+                <?php else: ?>
+                <p>まだ投稿がありません。</p>
+                <?php endif; ?>
             </ul>
-
 
             <div class="top-voice__btn">
                 <a href="<?php echo esc_url(home_url('/voice/')); ?>" class="btn slide"><span>View more</span></a>
@@ -346,16 +331,16 @@ $about_text = SCF::get('about__text', $page_about_us_id);
                     <h3 class="top-price__subTitle">ライセンス講習</h3>
                     <ul class="top-price__items">
                         <?php
-        $page_price_id = get_page_by_path('price')->ID;
-        $licenses = SCF::get('license', $page_price_id);
-        if (!empty($licenses)) :
-            foreach ($licenses as $license) : ?>
+                        $page_price_id = get_page_by_path('price')->ID;
+                        $licenses = SCF::get('license', $page_price_id);
+                        if (!empty($licenses)):
+                            foreach ($licenses as $license): ?>
                         <li class="top-price__item">
                             <p class="top-price__text"><?php echo esc_html($license['license__course']); ?></p>
                             <p class="top-price__price">¥<?php echo esc_html($license['license__price']); ?></p>
                         </li>
-                        <?php endforeach;
-        else : ?>
+                        <?php endforeach; ?>
+                        <?php else: ?>
                         <li class="top-price__item">
                             <p class="top-price__text">ライセンス情報が見つかりませんでした。</p>
                         </li>
@@ -365,82 +350,69 @@ $about_text = SCF::get('about__text', $page_about_us_id);
                     <h3 class="top-price__subTitle">体験ダイビング</h3>
                     <ul class="top-price__items">
                         <?php
-    $experience_course = SCF::get('experience__course', $page_price_id);
-    $experience_price = SCF::get('experience__price', $page_price_id);
+                        $experience_course = SCF::get('experience__course', $page_price_id);
+                        $experience_price = SCF::get('experience__price', $page_price_id);
 
-    if (!empty($experience_course) && !empty($experience_price)) {
-      foreach ($experience_course as $index => $course) {
-        $price = isset($experience_price[$index]) ? $experience_price[$index] : '';
-    ?>
+                        if (!empty($experience_course) && !empty($experience_price)):
+                            foreach ($experience_course as $index => $course):
+                                $price = isset($experience_price[$index]) ? $experience_price[$index] : '';
+                                ?>
                         <li class="top-price__item">
                             <p class="top-price__text"><?php echo esc_html($course); ?></p>
                             <p class="top-price__price">¥<?php echo esc_html($price); ?></p>
                         </li>
-                        <?php
-      }
-    } else {
-    ?>
+                        <?php endforeach; ?>
+                        <?php else: ?>
                         <li class="top-price__item">
                             <p class="top-price__text">体験ダイビング情報が見つかりませんでした。</p>
                         </li>
-                        <?php
-    }
-    ?>
+                        <?php endif; ?>
                     </ul>
 
                     <h3 class="top-price__subTitle">ファンダイビング</h3>
                     <ul class="top-price__items">
                         <?php
-    $fun_course = SCF::get('fun__course', $page_price_id);
-    $fun_price = SCF::get('fun__price', $page_price_id);
+                        $fun_course = SCF::get('fun__course', $page_price_id);
+                        $fun_price = SCF::get('fun__price', $page_price_id);
 
-    if (!empty($fun_course) && !empty($fun_price)) {
-      foreach ($fun_course as $index => $course) {
-        $price = isset($fun_price[$index]) ? $fun_price[$index] : '';
-    ?>
+                        if (!empty($fun_course) && !empty($fun_price)):
+                            foreach ($fun_course as $index => $course):
+                                $price = isset($fun_price[$index]) ? $fun_price[$index] : '';
+                                ?>
                         <li class="top-price__item">
                             <p class="top-price__text"><?php echo esc_html($course); ?></p>
                             <p class="top-price__price">¥<?php echo esc_html($price); ?></p>
                         </li>
-                        <?php
-      }
-    } else {
-    ?>
+                        <?php endforeach; ?>
+                        <?php else: ?>
                         <li class="top-price__item">
                             <p class="top-price__text">ファンダイビング情報が見つかりませんでした。</p>
                         </li>
-                        <?php
-    }
-    ?>
+                        <?php endif; ?>
                     </ul>
 
                     <h3 class="top-price__subTitle">スペシャルダイビング</h3>
                     <ul class="top-price__items">
                         <?php
-    $special_course = SCF::get('special__course', $page_price_id);
-    $special_price = SCF::get('special__price', $page_price_id);
+                        $special_course = SCF::get('special__course', $page_price_id);
+                        $special_price = SCF::get('special__price', $page_price_id);
 
-    if (!empty($special_course) && !empty($special_price)) {
-      foreach ($special_course as $index => $course) {
-        $price = isset($special_price[$index]) ? $special_price[$index] : '';
-    ?>
+                        if (!empty($special_course) && !empty($special_price)):
+                            foreach ($special_course as $index => $course):
+                                $price = isset($special_price[$index]) ? $special_price[$index] : '';
+                                ?>
                         <li class="top-price__item">
                             <p class="top-price__text"><?php echo esc_html($course); ?></p>
                             <p class="top-price__price">¥<?php echo esc_html($price); ?></p>
                         </li>
-                        <?php
-      }
-    } else {
-    ?>
+                        <?php endforeach; ?>
+                        <?php else: ?>
                         <li class="top-price__item">
                             <p class="top-price__text">スペシャルダイビング情報が見つかりませんでした。</p>
                         </li>
-                        <?php
-    }
-    ?>
+                        <?php endif; ?>
                     </ul>
                 </div>
-
             </div>
             <div class="top-price__btn">
                 <a href="<?php echo esc_url(home_url('price')); ?>" class="btn slide"><span>View more</span></a>
