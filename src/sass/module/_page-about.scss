@@ -33,12 +33,16 @@
   }
 }
 
-.page-about__inner::after {
+.page-about-gallery__inner{
+  position: relative;
+}
+
+.page-about-gallery__inner::after {
   display: none;
 
   @include mq('md'){
     background: url(../images/common/top-contact-mask.png) no-repeat top / contain;
-    bottom:  rem(-183);
+    top: rem(-50);
     content: "";
     display: block;
     height:  rem(138);

@@ -702,7 +702,7 @@ html.is-fixed {
 }
 
 .btn.long::before {
-	width: 12.71875rem;
+	width: 12.625rem;
 }
 
 .btn.slide {
@@ -910,8 +910,6 @@ html.is-fixed {
 
 .campaign-card {
 	box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
-	display: flex;
-	flex-direction: column;
 }
 
 .campaign-card__wrapper {
@@ -952,6 +950,7 @@ html.is-fixed {
 .campaign-card__title {
 	border-bottom: 0.0625rem solid #408F95;
 	color: #0D2936;
+	flex-grow: 1;
 	font-size: 1rem;
 	font-weight: 500;
 	line-height: 1.5;
@@ -1806,7 +1805,7 @@ input[type=submit] {
 }
 
 .modal__image {
-	aspect-ratio: 580/369;
+	aspect-ratio: 580/379;
 	cursor: pointer;
 	overflow: hidden;
 	position: relative;
@@ -1815,10 +1814,6 @@ input[type=submit] {
 
 .modal__image--mt {
 	margin-top: 0.5rem;
-}
-
-.modal__image--ar {
-	aspect-ratio: 492/761;
 }
 
 .modal__image img {
@@ -1977,7 +1972,11 @@ input[type=submit] {
 	margin-top: 2.5rem;
 }
 
-.page-about__inner::after {
+.page-about-gallery__inner {
+	position: relative;
+}
+
+.page-about-gallery__inner::after {
 	display: none;
 }
 
@@ -2237,7 +2236,7 @@ input[type=submit] {
 	width: 100%;
 }
 
-.page-mv__title h1 {
+.page-mv__title h2 {
 	color: #fff;
 	font-family: "Lato", sans-serif;
 	font-size: 2.5rem;
@@ -3627,7 +3626,6 @@ html {
 .campaign-card__detailText {
 	color: #0D2936;
 	display: block;
-	flex-grow: 1;
 	font-size: 1rem;
 	line-height: 1.5;
 	margin-top: 1.5rem;
@@ -3955,26 +3953,19 @@ select {
 
 .modal__flex-container {
 	grid-auto-flow: dense;
-	grid-template-columns: repeat(11, 1fr);
+	grid-template-columns: repeat(13, 1fr);
 }
 
 .modal__image {
-	grid-column: span 6;
+	grid-column: span 7;
 	grid-row: span 1;
 }
 
 .modal__image:nth-of-type(6n+1),
 .modal__image:nth-of-type(6n+6) {
-	grid-column: span 5;
-	grid-row: span 2;
-}
-
-.modal__image:nth-of-type(6n+2),
-.modal__image:nth-of-type(6n+3),
-.modal__image:nth-of-type(6n+4),
-.modal__image:nth-of-type(6n+5) {
+	aspect-ratio: 492/761;
 	grid-column: span 6;
-	grid-row: span 1;
+	grid-row: span 2;
 }
 
 .nav {
@@ -4015,14 +4006,14 @@ select {
 	margin-top: 5rem;
 }
 
-.page-about__inner::after {
+.page-about-gallery__inner::after {
 	background: url(../images/common/top-contact-mask.png) no-repeat top/contain;
-	bottom: -11.4375rem;
 	content: "";
 	display: block;
 	height: 8.625rem;
 	position: absolute;
 	right: calc(50% - min(48.4vw, 39.5625rem));
+	top: -3.125rem;
 	width: 18.8125rem;
 	z-index: 4;
 }
@@ -4197,7 +4188,7 @@ select {
 	max-height: 34.25rem;
 }
 
-.page-mv__title h1 {
+.page-mv__title h2 {
 	font-size: 5rem;
 	line-height: 1.25;
 }

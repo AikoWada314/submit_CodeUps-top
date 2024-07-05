@@ -4,13 +4,10 @@
   display: grid;
     gap: rem(8);
     @include mq("md") {
-        grid-template-columns: repeat(11, 1fr);
+        grid-template-columns: repeat(13, 1fr);
         grid-auto-flow: dense;
     }
-
 }
-
-
 
 .modal__images .modal__image {
   position: relative;
@@ -22,44 +19,30 @@
 }
 
 .modal__image {
-position: relative;
-aspect-ratio: 580/369;
-cursor: pointer;
-    overflow: hidden;
-    width: 100%;
+  position: relative;
+  aspect-ratio: 580/379;
+  cursor: pointer;
+  overflow: hidden;
+  width: 100%;
     @include mq(md) {
-        grid-column: span 6;
-        grid-row: span 1;
+      grid-column: span 7;
+      grid-row: span 1;
     }
 }
 
 .modal__image:nth-of-type(6n+1),
 .modal__image:nth-of-type(6n+6) {
     @include mq(md) {
-        grid-column: span 5;
-        grid-row: span 2;
-    }
-}
+      grid-column: span 6;
+      grid-row: span 2;
+      aspect-ratio: 492/761;
 
-.modal__image:nth-of-type(6n+2),
-.modal__image:nth-of-type(6n+3),
-.modal__image:nth-of-type(6n+4),
-.modal__image:nth-of-type(6n+5) {
-    @include mq(md) {
-        grid-column: span 6;
-        grid-row: span 1;
     }
 }
 
 .modal__image--mt{
   margin-top:  rem(8);
 }
-
-.modal__image--ar{
-  aspect-ratio: 492/761;
-
-}
-
 
 .modal__image img {
   position: absolute;
