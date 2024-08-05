@@ -1,0 +1,133 @@
+@use 'global' as *;
+
+.service {
+    background: linear-gradient(#3F4245, #19191C);
+    padding-top:  rem(80);
+    padding-bottom:  rem(94);
+    margin-top:  rem(124);
+    @include mq('md'){
+        padding-top:  rem(70);
+        padding-bottom:  rem(0);
+    }
+}
+
+
+.service__items {
+    margin-top:  rem(28);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7.0972%;
+
+    @include mq('md'){
+        flex-direction: column;
+        margin-top:  rem(60);
+        gap: rem(80) ;
+    }
+}
+
+
+
+
+.service__item{
+    display: flex;
+    flex-direction: column;
+    width: 46.4514%;
+    @include mq('md'){
+        width: 100%;
+    }
+}
+
+.service__item:nth-child(3),
+.service__item:nth-child(4){
+    margin-top:  rem(70);
+    @include mq('md'){
+        margin-top: 0;
+    }
+}
+
+
+.service__title-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.service__link{
+    width:  rem(42);
+    height:  rem(28);
+    background-color: $btn-black;
+    transition: all .3s;
+    border-radius:  rem(99);
+    position: relative;
+}
+
+.service__link::before{
+    max-height:  12px;
+    background-image: url(../images/common/service-arrow.svg);
+    content: "";
+    display: block;
+    height: 47%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    max-width:  13px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
+.service__link:hover{
+    background-color: $blue;
+}
+
+
+
+.service__item-title {
+    font-size:   rem(24);
+    font-weight: $bold;
+    line-height: calc(35 /24 );
+    color: $white;
+}
+
+
+
+.service__text {
+    margin-top:  rem(20);
+    font-size:   rem(12);
+    font-weight: $medium;
+    line-height: calc(23 /12 );
+    color: $white;
+    flex:1;
+    width: 63%;
+
+    @include mq('md'){
+        width: 95%;
+    }
+}
+
+.service__img {
+    position: relative;
+    aspect-ratio: 497.03/259.56;
+    width: 100%;
+    margin-top:  rem(22);
+
+  @include mq('md'){
+    aspect-ratio: 360/188;
+    margin-top:  rem(34);
+    width: 92vw;
+    margin-left: calc(50% - 50vw);
+  }
+}
+
+.service__img img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+

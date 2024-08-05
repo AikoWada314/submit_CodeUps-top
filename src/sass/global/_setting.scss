@@ -3,42 +3,41 @@
 
 // インナー幅設定
 // コンテンツのインナー幅（最も共通の幅が多い部分）
-$inner: 1080px;
+$inner: 1070px;
 // ※キュンパス幅ではなくインナーの幅を指す
 
 // 余白
 $padding-pc: 25px;
-$padding-sp: 15px;
+$padding-sp: 30px;
 
 ////////////////////
 // フォント設定
 ////////////////////
 
 $base-font: "Noto Sans JP", sans-serif;
-$second-font:"Noto Serif JP", serif;
-$gotu: "Gotu", sans-serif;
-$lato:  "Lato", sans-serif;
-
+$arial:"Arial", serif;
 // ※検証ツールでしっかり反映されているか確認する
 
 body {
   font-family: $base-font;
-
 }
 
 // フォントウェイト
 $regular: 300;
 $normal: 400;
 $bold: 700;
+$medium:500;
 
 ////////////////////
 // 色の指定
 ////////////////////
 
 //色指定（共通性のあるものは出来る限り指定すると良い）
-$black: #0D2936;
+$black: #2E2E2E;
 $white: #fff;
-$green:#408F95;
-$brown:#796A64;
-
-
+$blue:#82D8D0;
+$darkgray:#292A2C;
+$text-gray:#9B9CA2;
+$gray:#3F4245;
+$btn-black:#000000;
+$border-gray:#545558;

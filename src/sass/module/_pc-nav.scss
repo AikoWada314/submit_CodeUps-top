@@ -1,64 +1,115 @@
 @use 'global' as *;
 
-.pc-nav {
-
-}
 
 .pc-nav__items {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: rem(40);
-  height: inherit;
+    display: flex;
+    gap:  rem(46);
+    height: inherit;
+    align-items: center;
+    justify-content: center;
 }
 
 .pc-nav__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: inherit;
-  color: $white;
-  font-family: $gotu;
-  font-weight: $regular;
-  font-size:  rem(18);
-  line-height: calc(18 / 18);
-}
-
-  .pc-nav__item a{
-    position: relative;
+    color: $black;
+    font-size:   rem(12);
+    font-weight: bold;
+    line-height: calc(23 /12 );
     height: inherit;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+
+}
+
+.pc-nav__item a{
+    display: flex;
+    height: inherit;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+    position: relative;
+
   }
 
-.pc-nav__item a::after {
-  content: '';
-  /*絶対配置で線の位置を決める*/
-  position: absolute;
-  bottom:  rem(15);
-  left: 10%;
-  /*線の形状*/
-  width: 80%;
-  height:  rem(2);
-  background:#fff;;
-  /*アニメーションの指定*/
-  transition: all .3s;
-  transform: scale(0, 1);/*X方向0、Y方向1*/
-  transform-origin: center top;/*上部中央基点*/
+  .pc-nav__item a:hover{
+    color: $blue;
+  }
+
+  .pc-nav__item a::before{
+    display: block;
+    position: absolute;
+    content:"";
+    width:  rem(6);
+    height:  rem(6);
+    border-radius:  rem(99);
+    top:  50%;
+    left:  rem(-13);
+    background-color: $blue;
+    visibility: hidden;/*デフォルトでは非表示の状態にしておく*/
+    opacity: 0;/*不透明度0*/
+    transition: all .3s;/*表示の変化を0.3秒に指定*/
+  }
+
+  .pc-nav__item a:hover::before{
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .pc-nav__item.pc-nav__item--contact a:hover::before,
+  .pc-nav__service-items a:hover::before{
+    opacity: 0;
+  }
+
+  .pc-nav__item--contact{
+    height: initial;
+    margin-left:  rem(46);
+  }
+
+  .pc-nav__item--contact a{
+    background-color: $btn-black;
+    color: $white;
+    padding:  rem(8)  rem(20);
+    border-radius:  rem(99);
+    text-transform: uppercase;
+    font-family: $arial;
+    font-size:   rem(12);
+  }
+
+  .pc-nav__item--contact a:hover{
+    background-color: $blue;
+    color: $white;
+  }
+
+
+
+
+
+  .pc-nav__service-items {
+    visibility: hidden;/*デフォルトでは非表示の状態にしておく*/
+    opacity: 0;/*不透明度0*/
+    transition: all .3s;/*表示の変化を0.3秒に指定*/
+    width: 100%;
+    position: absolute;
+    top:  rem(80);
+    left: 0;
+    background-color: #F0F0F1;
+    height:  rem(70);    justify-content: flex-end;
+    gap:  rem(38);
+    display: flex;
+    padding-left: rem(46);
+    padding-right: rem(57);
+  }
+
+  .pc-nav__service-item,
+  .pc-nav__service-item a{
+    height: inherit;
+  }
+  
+  .pc-nav__item:hover .pc-nav__service-items {
+    visibility: visible;/*Gナビメニューにホバーしたら表示*/
+    opacity: 1;/*不透明度1*/
+
 }
 
-.pc-nav__item a:hover::after {
-  transform: scale(1, 1);/*X方向にスケール拡大*/
-}
-
-.pc-nav__item p{
-  font-family: $base-font;
-  margin-top:  rem(4);
-  font-size:   rem(10);
-  line-height: calc(15 /10);
-  color: $white; 
-}
+  

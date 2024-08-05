@@ -1,97 +1,237 @@
 @use 'global' as *;
 
+.footer {
+    background-color: $btn-black;
+    padding-top:  rem(47);
+    padding-bottom:  rem(71);
+    margin-inline: auto;
+    text-align: center;
 
-
-.footer{
-  background-color: $green;
-  padding-top:  rem(48);
-  padding-bottom:  rem(56);
   @include mq('md'){
-    padding-top:  rem(93);
-    padding-bottom:  rem(80);
+    padding-top:  rem(50);
   }
 }
 
 .footer__inner {
 
 }
-.footer__img-flex{
-  @include mq('md'){
-    display: flex;
-    gap:  rem(40);
-    align-items: flex-end;
-  }
+
+.footer__contact-wrapper{
+    @include mq('md'){
+        text-align: left;
+    }
 }
 
-.footer__logoLink {
-  width:  rem(120);
-  aspect-ratio: 120/45;
-
-  @include mq('md'){
-    aspect-ratio: 200/75;
-    width:  rem(200);
-  }
-}
-
-.footer__logoLink img{
-  width:  rem(120);
-  height:  rem(45);
-
-  @include mq('md'){
-    aspect-ratio: 200/75;
-    width:  rem(200);
-    height:  rem(75);
-  }
-}
-
-.footer__sns-icon {
-  margin-top:  rem(16);
-  display: flex;
-  align-items: center;
-  gap:  rem(16);
-  @include mq('md'){
-    padding-bottom:  rem(15);
-    gap:  rem(18);
-  }
-}
-
-.footer__fb-img {
-  width:  rem(24);
-  @include mq('md'){
-    width:  rem(32);
-  }
-}
-
-.footer__ig-img {
-  width:  rem(19.5);
-
-  @include mq('md'){
-    width:  rem(26);
-    height:  rem(26);
-  }
-}
-
-.footer__nav{
-
-}
-
-.footer small{
-  display: block;
-  margin-top:  rem(40);
-  color: $white;
-  font-size:   rem(11.5);
-  line-height: calc(18 /12 );
-  font-family: $gotu;
-  text-align: center;
-  @include mq('md'){
-    margin-top:  rem(80);
+.footer__contact {
+    position: relative;
     font-size:   rem(14);
-    line-height: calc(18 /14 );
-
-  }
+    font-weight: $bold;
+    color: $text-gray;
+    font-family: $arial;
+    text-transform: uppercase;
+    display: inline-block;
+    @include mq('md'){
+        padding-left:  rem(17);
+    }
 }
 
-// WPかすたまいず
-.custom-margin-404 footer{
-  margin-top: 0;
+
+.footer__text {
+    color: $white;
+    font-size:   rem(20);
+    line-height: calc(27 /20 );
+    margin-top:  rem(10);
+    font-weight: $bold;
+    @include mq('md'){
+        font-size:   rem(19);
+    }    
+}
+
+.footer__btn {
+    margin-top:  rem(52);
+}
+
+.footer__btn a{
+    color: $white;
+    font-size:   rem(14);
+    padding:  rem(20)  rem(74);
+    border:  rem(0.5) solid #fff;
+    border-radius:  rem(99);
+    position: relative;
+    transition: all .3s;
+    font-weight: $bold;
+}
+
+.footer__btn a:hover{
+    background-color: $blue;
+    color: $white;
+    border:  rem(0.5) solid $blue;
+
+}
+
+.footer__btn a::before{
+    background-image: url(../images/common/arrow.svg);
+    background-size: contain;
+    content: "";
+    display: inline-block;
+    height: 0.75rem;
+    width: 0.8125rem;
+    top:  rem(25);
+    position: absolute;
+    right:  rem(22);
+    
+}
+
+.footer__phone {
+    margin-top:  rem(34);
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-top:  rem(50);
+}
+
+.footer__tel {
+    font-family: $arial;
+    font-size:   rem(15);
+    font-weight: $bold;
+    line-height: calc(30 /15 );
+    text-transform: uppercase;
+}
+
+.footer__number {
+    font-family: arial;
+    font-size:   rem(25);
+    font-weight: $bold;
+    line-height: calc(30 /25 );
+}
+
+.footer__hour {
+    font-size:   rem(10);
+    font-weight: $medium;
+    color: $text-gray;
+}
+
+.footer__company {
+    color: $white;
+    text-align: center;
+    font-size:   rem(34);
+    font-weight: $bold;
+    font-family: $arial;
+    line-height: calc(39 /34 );
+    margin-top:  rem(46);
+    @include mq('md'){
+        margin-top:  rem(80);
+    }
+}
+
+.footer__nav {
+    color: $white;
+}
+
+.footer__items {
+    display: flex;
+    gap:  rem(130);
+    margin-top:  rem(35);
+    @include mq('md'){
+        flex-direction: column;
+        margin-top:  rem(38);
+        gap: 0;
+    }
+}
+
+.footer__item {
+    font-size:   rem(12);
+    font-weight: $bold;
+    line-height: calc(23 /12 );
+    text-align: left;
+
+}
+
+.footer__item a{
+    transition: all .3s;
+}
+
+.footer__item:nth-of-type(2){
+    @include mq('md'){
+        margin-top:  rem(35);
+    }
+}
+
+.footer__item:nth-of-type(n+3) {
+    @include mq('md') {
+        margin-top: rem(25);
+    }
+}
+
+.footer__item a:hover{
+    color: $blue;
+}
+
+
+.footer__service-items {
+    text-align: left;
+    color: $text-gray;
+    font-size:   rem(12);
+    font-weight: $medium;
+    margin-left:  rem(20);
+    margin-top:  rem(14);
+}
+
+.footer__service-item:not(:first-child) {
+    margin-top:  rem(7);
+}
+
+.footer__service-item a{
+    transition: all .3s;
+
+}
+
+.footer__service-item a:hover{
+    color: $blue;
+}
+
+.footer__bottom {
+display: flex;
+justify-content: space-between;
+padding-top:  rem(6);
+margin-top:  rem(32);
+color: $text-gray;
+position: relative;
+@include mq('md'){
+ flex-direction: column;
+ align-items: start;
+ margin-top:  rem(57);
+ padding-top:  rem(24);
+}
+}
+
+.footer__bottom::before {
+position: absolute;
+content:"";
+display: block;
+background-color: #737479;
+height:  rem(0.5);
+width: 100%;
+top: 0;
+left: 0;
+@include mq('md'){
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+}
+}
+
+.footer__address {
+    font-size:   rem(10);
+    font-weight: $regular;
+    line-height: calc(23 /10 );
+}
+
+
+.footer__bottom small{
+    font-family: $arial;
+    font-size:  rem(7);
+    font-weight: $regular;
+    line-height: calc(30 /7 );
+    display: block;
 }

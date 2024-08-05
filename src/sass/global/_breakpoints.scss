@@ -1,5 +1,5 @@
 // どっちファーストの設定（"sp" or "pc"）
-$startFrom: sp;
+$startFrom: pc;
 
 // デフォルト値を設定
 $mediaquerys: (
@@ -30,8 +30,8 @@ $mediaquerys: (
   $breakpoints: (
     xl: 1440,
     lg: 1023,
-    md: 767,
-    sm: 600,
+    md: 640,
+    sm: 389,
   );
   $mediaquerys: (
     sm: "screen and (max-width: #{map-get($breakpoints,'sm')}px)",

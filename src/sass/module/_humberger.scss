@@ -1,0 +1,66 @@
+
+@use 'global' as *;
+
+.hamburger{
+  position: relative;
+  width: rem(44);
+  height: rem(44);
+  z-index: 100;
+  border:  rem(0.5) solid $white;
+  border-radius:  rem(99);
+  background-color: $white;
+  top:  rem(-4);
+  right:  rem(-2);
+}
+
+
+.hamburger::before{
+  position: absolute;
+  content:"";
+  display: block;
+  width: inherit;
+  height:  rem(2);
+  width:  rem(18);
+  background-color: $black;
+  transition: .3s;
+  position: absolute;
+  top: 41%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hamburger.is-active{
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+
+.hamburger::after{
+  content:"";
+  display: block;
+  width: inherit;
+  height:  rem(2);
+  width:  rem(18);
+  background-color: $black;
+  transition: .3s;
+  position: absolute;
+  top:  56%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hamburger.is-active::before{
+  -webkit-transform: translate(-50%, 3px) rotate(45deg);
+  transform: translate(-50%, 3px) rotate(45deg);
+  background-color: #fff;
+}
+
+.hamburger.is-active::after{
+  -webkit-transform: translate(-50%, -4px) rotate(-45deg);
+  transform: translate(-50%, -4px) rotate(-45deg);
+  background-color: #fff;
+}
+
+body.is-active{
+  overflow: hidden;
+  height:100%;
+}

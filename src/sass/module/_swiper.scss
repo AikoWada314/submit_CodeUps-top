@@ -1,91 +1,31 @@
+
 @use 'global' as *;
 
-.js-campaign-swiper{
-  margin-right: calc(50% - 50vw);
-  padding-bottom:  rem(2);
+.swiper__container{
+    position: relative;
+    margin-top:  rem(70);
+    @include mq('md'){
+        margin-top:  rem(112);
+    }
 }
 
-.swiper-wrapper{
-}
 
-.swiper-button-prev{
-  display: none;
-
-  @include mq('md'){
-    display: block;
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+    top:  rem(-40);
+    left: 0;
     position: absolute;
-    top:   rem(-82);
-    left:  rem(838);
-    width:  rem(80);
-    height:  rem(80);
-    border:  rem(1) solid $green;
-    border-radius: 50%;
-  }  
+    width: initial;
+    @include mq('md'){
+        top:  rem(-52);
+    }
 }
 
-.swiper-button-prev::after{
-  content:"";
-  display: block;
-  background-color: $green;
-  width:  rem(40);
-  height:  rem(1);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.swiper-pagination-bullet{
+    width:  rem(5);
+    height:  rem(5);
+    background-color: #D1D1D1;
 }
 
-.swiper-button-prev::before{
-  content:"";
-  display: block;
-  background-color: $green;
-  width:  rem(10);
-  height:  rem(1);
-  transform:  rotate(135deg);
-  position: absolute;
-  left:  rem(18);
-  top:  rem(35.5);
-  }
-
-.swiper-button-next{
-  display: none;
-  @include mq('md'){
-    display: block;
-    position: absolute;
-    top:  rem(-82);
-    right:  0;
-    width:  rem(80);
-    height:  rem(80);
-    border:  rem(1) solid $green;
-    border-radius: 50%;
-  }
-
-}
-
-.swiper-button-next::after{
-  content:"";
-  display: block;
-  background-color: $green;
-  width:  rem(40);
-  height:  rem(1);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.swiper-button-next::before{
-  content:"";
-  display: block;
-  background-color: $green;
-  width:  rem(10);
-  height:  rem(1);
-  transform:  rotate(45deg);
-  top:   rem(35.5);
-  right:   rem(17);
-  position: absolute;
-  }
-
-.swiper-slide{
-   
+.swiper-pagination-bullet-active{
+    background-color: $blue;
 }
