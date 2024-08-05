@@ -973,6 +973,7 @@ body.is-active {
 	opacity: 0; /*不透明度0*/
 	position: absolute;
 	top: 50%;
+	transform: translateY(-20%);
 	transition: all 0.3s; /*表示の変化を0.3秒に指定*/
 	visibility: hidden; /*デフォルトでは非表示の状態にしておく*/
 	width: 0.375rem;

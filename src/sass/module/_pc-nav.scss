@@ -49,6 +49,7 @@
     visibility: hidden;/*デフォルトでは非表示の状態にしておく*/
     opacity: 0;/*不透明度0*/
     transition: all .3s;/*表示の変化を0.3秒に指定*/
+    transform: translateY(-20%);
   }
 
   .pc-nav__item a:hover::before{
