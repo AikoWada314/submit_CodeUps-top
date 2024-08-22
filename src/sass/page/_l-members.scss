@@ -1,8 +1,0 @@
-@use 'global' as *;
-
-.l-members{
-    margin-top:  rem(128);
-    @include mq('md'){
-        margin-top:  rem(108);
-    }
-}

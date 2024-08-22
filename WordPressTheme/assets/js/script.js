@@ -1,7 +1,31 @@
 "use strict";
 
 jQuery(function ($) {
-  // この中であればWordpressでも「$」が使用可能になる
+  // この中であればWordPressでも「$」が使用可能になる
+
+  // fvスライダー
+  var fv_swiper = new Swiper(".js-fv-swiper", {
+    loop: true,
+    slidesPerView: 'auto',
+    autoplay: {
+      delay: 0
+    },
+    speed: 4000,
+    allowTouchMove: false,
+    spaceBetween: 0
+  });
+
+  // スクロールするとヘッダー背景色変更
+  var header = $('.header');
+  var headerHeight = $('.header').height();
+  var height = $('.fv').height();
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 0) {
+      header.addClass('is-color');
+    } else {
+      header.removeClass('is-color');
+    }
+  });
 
   // ハンバーガーメニューのクリックイベント
   $(".js-hamburger").click(function () {
@@ -12,12 +36,13 @@ jQuery(function ($) {
   });
 
   // Membersスライダー
-  var swiper = new Swiper(".js-swiper", {
+  var member_swiper = new Swiper(".js-swiper", {
     loop: true,
     slidesPerView: "1.4",
     autoplay: {
-      delay: 2000
+      delay: 1000
     },
+    speed: 2000,
     spaceBetween: 10,
     centeredSlides: false,
     pagination: {
@@ -26,41 +51,31 @@ jQuery(function ($) {
     },
     breakpoints: {
       641: {
-        slidesPerView: "4.5"
+        slidesPerView: "4.52"
       }
     }
   });
 
-  // アコーディオン
-  $('.jsAccordionTitle').on('click', function () {
-    $(this).next().slideToggle();
-    $(this).toggleClass('is-active', '300');
-  });
-
-  // サービスページスライダー
-  var service_swiper = new Swiper(".js-service-swiper", {
-    loop: true,
-    slidesPerView: "1.16",
-    autoplay: {
-      delay: 2000
-    },
-    spaceBetween: 10,
-    centeredSlides: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
-    },
-    breakpoints: {
-      641: {
-        slidesPerView: "3.5"
-      }
-    }
-  });
-
-  // ふわっとアニメーション（GSAP）
+  // GSAP アニメーション 1
   var fadeIns = document.querySelectorAll('.js-fadeIn');
   fadeIns.forEach(function (fadeIn) {
-    gsap.fromTo(fadeIn, {
+    gsap.fromTo(fadeIn.querySelector('span'), {
+      yPercent: 100
+    }, {
+      yPercent: 0,
+      duration: 1,
+      ease: Power3.easeOut,
+      scrollTrigger: {
+        trigger: fadeIn,
+        start: "top bottom"
+      }
+    });
+  });
+
+  // GSAP アニメーション 2
+  var fadeIns2 = document.querySelectorAll('.js-fadeIn2');
+  fadeIns2.forEach(function (fadeIn2) {
+    gsap.fromTo(fadeIn2, {
       y: 30,
       opacity: 0
     }, {
@@ -69,9 +84,33 @@ jQuery(function ($) {
       duration: 1,
       ease: Power2.easeOut,
       scrollTrigger: {
-        trigger: fadeIn,
+        trigger: fadeIn2,
         start: "top bottom"
       }
     });
+  });
+
+  // 別ページへのアンカーリンク
+  var headH = $("header").outerHeight();
+  var animeSpeed = 500;
+  var urlHash = location.hash; // URLのハッシュタグを取得
+
+  if (urlHash) {
+    // ハッシュタグが有る場合
+    $("body,html").scrollTop(0);
+    setTimeout(function () {
+      // 無くてもいいが有ると動作が安定する
+      var target = $(urlHash);
+      var position = target.offset().top - headH;
+      $("body,html").stop().animate({
+        scrollTop: position
+      }, animeSpeed);
+    }, 0);
+  }
+
+  // アコーディオン
+  $('.jsAccordionTitle').on('click', function () {
+    $(this).next().slideToggle();
+    $(this).toggleClass('is-active', '300');
   });
 });

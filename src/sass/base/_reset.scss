@@ -29,7 +29,7 @@ dd {
 /* Set core root defaults */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 7.5rem;
+  // scroll-padding-top: 7.5rem;
 }
 
 /* Set core body defaults */
@@ -54,6 +54,7 @@ img {
   max-width: 100%;
   display: block;
   width: 100%;
+  height: auto;
 }
 
 /* Natural flow and rhythm in articles by default */

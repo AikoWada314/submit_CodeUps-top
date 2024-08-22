@@ -82,4 +82,11 @@ $mediaquerys: (
       display: block;
     }
   }
+
+  .u-sm{
+    display: none;
+    @include mq('sm'){
+      display: block;
+    }
+  }
 }
