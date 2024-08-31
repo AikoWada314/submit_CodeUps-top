@@ -1,8 +1,7 @@
 <?php 
 function my_custom_enqueue_scripts() {
     // CSSの読み込み
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap', [], null);
-    wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper@8/swiper-bundle.min.css', [], null);
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap', [], null);
     wp_enqueue_style('theme-style', get_theme_file_uri('/assets/css/style.css'), [], null);
 
     // JavaScriptの読み込み
@@ -21,24 +20,22 @@ function add_preconnect() {
 }
 add_action('wp_head', 'add_preconnect');
 
-// Contact Form 7の自動pタグ無効
-add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
-function wpcf7_autop_return_false() {
-  return false;
-}
 
 // ログイン画面ロゴ変更
 function my_login_logo() {
   echo '<style type="text/css">
       .login h1 a {
           background-image: url(' . get_template_directory_uri() . '/assets/images/common/logo.png);
-          width: 320px;
-          height: 40px;
-          background-size: 320px 40px;
+          width: 332px;
+          height: 67px;
+          background-size: 332px 67px;
       }
   </style>';
 }
 add_action('login_head', 'my_login_logo');
+
+
+
 
 
 // 投稿の表示名を実績投稿に変更
@@ -47,14 +44,14 @@ add_action('login_head', 'my_login_logo');
 function change_post_menu_label() {
   global $menu;
   global $submenu;
-  $name = '実績投稿';
+  $name = '新着情報';
   $menu[5][0] = $name;
   $submenu['edit.php'][5][0] = $name.'一覧';
   $submenu['edit.php'][10][0] = '新しい'.$name;
  }
  function change_post_object_label() {
   global $wp_post_types;
-  $name = '実績投稿';
+  $name = '新着情報';
   $labels = &$wp_post_types['post']->labels;
   $labels->name = $name;
   $labels->singular_name = $name;

@@ -1,0 +1,89 @@
+@use 'global' as *;
+
+
+.fv {
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.fv__inner {
+  width: 100%;
+  height: inherit;
+  position: relative;
+}
+
+.fv__img-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  @include mq("md"){
+   flex-direction: column;
+  }
+}
+
+.fv__main-img {
+  position: relative;
+  aspect-ratio: 1235/900;
+  width: 64.323%;
+  @include mq('md'){
+    width: 100%;
+    height: 65%;
+  }
+}
+
+.fv__main-img img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.fv__pic-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 35.677%;
+  @include mq('md'){
+    width: 100%;
+    flex-direction: row;
+    flex:1;
+  }
+}
+
+.fv__sub-img1,
+.fv__sub-img2 {
+  flex: 1; /* フレックスアイテムとしての幅を設定 */
+  position: relative;
+  aspect-ratio: 685/450;
+}
+
+.fv__sub-img1 img,
+.fv__sub-img2 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fv__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFF;
+  text-align: center;
+  text-shadow:rem(4)  rem(4)  rem(8) rgba(25, 43, 66, 0.80);
+  font-family: "Noto Serif JP";
+  font-size:  rem(64);
+  width: 100%;
+  font-weight: 500;
+  letter-spacing:  rem(6.4);
+  @include mq('md'){
+    font-size:   rem(40);
+  }
+}

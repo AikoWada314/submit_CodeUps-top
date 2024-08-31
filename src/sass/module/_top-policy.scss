@@ -1,0 +1,49 @@
+@use 'global' as *;
+
+
+.top-policy {
+  margin-top:  rem(120);
+}
+
+
+
+.top-policy__inner {
+
+}
+
+.top-policy__section-header {
+  text-align: center;
+
+}
+
+
+
+.top-policy__text,
+.top-policy__text2 {
+  color: #333;
+  text-align: center;
+  font-family: "Noto Sans JP";
+  font-size:  rem(18);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: rem(0.72);
+  margin-top:  rem(60);
+}
+
+.top-policy__img {
+  margin-top:  rem(80);
+  position: relative;
+  aspect-ratio: 574/870;
+  max-width:  rem(574);
+  margin-inline: auto;
+}
+
+.top-policy__img img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

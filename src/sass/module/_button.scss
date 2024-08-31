@@ -1,0 +1,107 @@
+@use 'global' as *;
+
+.button{
+  background: #573314;
+  display: block;
+  width:  rem(435);
+  border:  rem(1) solid #573314;
+  margin-inline: auto;
+
+}
+
+.button a{
+  position: relative;
+  display: block;
+  padding:  rem(30)  rem(20);
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans JP";
+  font-size:  rem(18);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing:  rem(1.08);
+  transition: all .3s;
+}
+
+.button a::before{
+  mask-image: url(../images/common/arrow.svg);
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  content: "";
+  display: block;  
+  position: absolute;
+  width:  rem(36);
+  height:  rem(6);
+  right:  rem(90);
+  top: 50%;
+  background-color: #fff;
+  transition: all .3s;
+}
+
+.button a:hover{
+  background-color: #fff;
+  color: #573314;
+}
+
+.button a:hover::before{
+  background-color: #573314;
+}
+
+.button.button--left{
+  margin-left: initial;
+}
+
+.button-white{
+  border:  rem(1) #573314 solid;
+  width:  rem(395);
+  position: relative;
+  margin-inline: auto;
+  
+  @include mq('md'){
+    margin-inline: auto;
+  } 
+}
+
+.button-white a{
+  display: block;
+    color: #333;
+  text-align: center;
+  font-family: "Noto Sans JP";
+  font-size:  rem(18);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing:  rem(1.08);
+  position: relative;
+  padding:  rem(27)  rem(20);
+  transition: all .3s;
+
+}
+
+.button-white a::before{
+  mask-image: url(../images/common/arrow.svg);
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  content: "";
+  display: block;  
+  position: absolute;
+  width:  rem(36);
+  height:  rem(6);
+  right:  rem(20);
+  top: 50%;
+  background-color: #573314;
+  transition: all .3s;
+}
+
+
+.button-white a:hover{
+  background-color: #573314;
+  color: #fff;
+}
+
+.button-white a:hover::before{
+  background-color: #fff;
+}
+
+

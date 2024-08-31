@@ -1,0 +1,232 @@
+@use 'global' as *;
+
+.footer {
+  background: #333;
+  padding-top:  rem(120);
+  padding-bottom:  rem(80);
+  color: #fff;
+
+  @include mq('md'){
+    padding-top:  rem(90);
+    padding-bottom:  rem(60);
+  }
+}
+
+
+
+.footer__inner {
+
+}
+
+
+
+.footer__flex {
+  display: flex;
+  gap:  9.1667%;
+  @include mq('md'){
+    flex-direction: column;
+  }
+}
+
+.footer__clinic-info {
+  width: 33.141%;
+  @include mq('md'){
+    width: 100%;
+  }
+}
+
+.footer__clinic-name {
+
+}
+
+.footer__tel-flex{
+  display: flex;
+  margin-top: rem(30);
+  gap:  rem(10);
+  align-items: baseline;
+}
+
+.footer__tel {
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans JP";
+  font-size:  rem(20);
+  font-style: normal;
+  font-weight: 350;
+  line-height: normal;
+}
+
+.footer__number {
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans JP";
+  font-size:  rem(28);
+  font-style: normal;
+  font-weight: 350;
+  line-height: normal;
+}
+
+.footer__address {
+  margin-top:  rem(20);
+  color: #FFF;
+font-family: "Noto Sans JP";
+font-size:  rem(16);
+font-style: normal;
+font-weight: 350;
+line-height: normal;
+}
+
+.footer__schedule {
+  margin-top:  rem(40);
+  @include mq('md'){
+    max-width:  rem(457);
+  }
+}
+
+
+.footer__saturday {
+  color: #FFF;
+  font-family: "Noto Sans JP";
+  font-size:  rem(14);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top:  rem(10);
+}
+
+.footer__note {
+  color: #FFF;
+  font-family: "Noto Sans JP";
+  font-size:  rem(14);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top:  rem(10);
+}
+
+.footer__map-and-links {
+  width: 57.692%;
+  @include mq('md'){
+    width: 100%;
+  }
+}
+
+.footer__map {
+  position: relative;
+  aspect-ratio: 900/421;
+  @include mq('md'){
+    margin-top:  rem(60);
+  }
+}
+
+.footer__map iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+.footer__nav {
+  margin-top:  rem(63);
+}
+
+
+
+
+.footer__nav-list {
+  display: flex;
+  gap:  rem(60);
+  @include mq("md"){
+    flex-direction: column;
+    gap:  rem(30);
+   }
+}
+
+.footer__nav-item.footer__nav-item--flex {
+  display: flex;
+  gap:  rem(60);
+  border-right: 1px solid #fff;
+  padding-right:  rem(60);
+  @include mq("md"){
+   flex-direction: column;
+   border-right: none;
+   border-bottom: 1px solid #fff;
+    gap:  rem(30);
+    padding-right: 0;
+    padding-bottom:  rem(30);
+  }
+}
+
+.footer__nav-item{
+  
+}
+
+.footer__nav-title {
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans JP";
+  font-size:  rem(18);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+}
+
+.footer__sub-list {
+  display: flex;
+  gap:  rem(60);
+  @include mq("md"){
+    flex-direction: column;
+    gap:  rem(30);
+   }
+}
+
+.footer__sub-item {
+  color: #FFF;
+  font-family: "Noto Sans JP";
+  font-size:  rem(16);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top:  rem(10);
+}
+
+.footer__sub-item:first-child{
+  margin-top: 0;
+}
+
+.footer__nav-link {
+
+}
+
+.footer__anchorlink-list {
+  margin-top:  rem(10);
+  color: #FFF;
+  font-family: "Noto Sans CJK JP";
+  font-size:  rem(14);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: left;
+}
+
+.footer__anchorlink-item {
+  margin-top:  rem(2);
+}
+
+.footer__bottom {
+  margin-top:  rem(60);
+}
+
+.footer__copy {
+  color: #FFF;
+  font-family: "Noto Sans JP";
+  font-size:  rem(16);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+

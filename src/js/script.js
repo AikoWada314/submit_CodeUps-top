@@ -1,16 +1,6 @@
 jQuery(function ($) { // この中であればWordPressでも「$」が使用可能になる
 
-  // fvスライダー
-  var fv_swiper = new Swiper(".js-fv-swiper", {
-    loop: true,
-    slidesPerView: 'auto',
-    autoplay: {
-      delay: 0
-    },
-    speed: 4000,
-    allowTouchMove: false,
-    spaceBetween: 0,
-  });
+
 
 
   // スクロールするとヘッダー背景色変更
@@ -35,24 +25,7 @@ jQuery(function ($) { // この中であればWordPressでも「$」が使用可
     $('body').toggleClass("is-active");
   });
 
-  // Membersスライダー
-  const member_swiper = new Swiper(".js-swiper", {
-    loop: true, 
-    slidesPerView: "1.4",
-    autoplay: { delay: 1000, },
-    speed:2000,
-    spaceBetween: 10,
-    centeredSlides: false, 
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      641: {
-        slidesPerView: "4.52",
-      }
-    },
-  });
+
 
   
 // GSAP アニメーション 1

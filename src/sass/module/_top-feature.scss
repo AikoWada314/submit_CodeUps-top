@@ -1,0 +1,117 @@
+@use 'global' as *;
+
+.top-feature {
+  margin-top:  rem(126);
+}
+
+.top-feature__section-header{
+  text-align: center;
+}
+
+.top-feature__bg{
+  margin-top:  rem(60);
+  background: linear-gradient(90deg, #F7F5F1 0%, #F7F5F1 62%, transparent 62%, transparent 100%);
+  padding-top:  rem(80);
+  padding-bottom:  rem(107);
+  position: relative;
+  z-index: 10;
+}
+
+.top-feature__inner {
+}
+
+.top-feature__item:first-child{
+  margin-top:  rem(0);
+}
+
+.top-feature__item {
+  display: flex;
+  align-items: end;
+  margin-right: calc(50% - 50vw);
+  margin-top:  rem(140);
+  @include mq("md"){
+   flex-direction: column;
+  }
+}
+
+.top-feature__text-wrapper {
+  background-color: #fff;
+  width: 59%;
+  padding:  rem(84)  rem(40)  rem(50);
+  position: relative;
+  margin-right:  rem(-80);
+  z-index: 2;
+  @include mq('md'){
+    width: 100%;
+    margin-right:  rem(0);
+  }
+}
+
+.top-feature__number {
+  color: rgba(97, 148, 143, 0.57);
+  font-family: "Noto Serif JP";
+  font-size:  rem(128);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  position: absolute;
+  top:  rem(-100);
+  left:  rem(63);
+}
+
+.top-feature__title {
+  color: #333;
+  font-family: "Noto Sans JP";
+  font-size:  rem(36);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.top-feature__text {
+  margin-top:  rem(30);
+  color: #333;
+  font-family: "Noto Sans JP";
+  font-size:  rem(20);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing:  rem(0.8);
+}
+
+.top-feature__btn{
+  margin-top:  rem(34);
+}
+
+
+.top-feature__img {
+  position: relative;
+  aspect-ratio: 922/538;
+  width: 59%;
+  margin-bottom:  rem(25);
+  @include mq('md'){
+    width: 100%;
+  }
+}
+
+.top-feature__img img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.top-feature__btn-brown{
+  background-color: #E2DBCF;
+  padding-top:  rem(100);
+  padding-bottom:  rem(120);
+  margin-right: calc(50% - 50vw);
+  position: relative;
+    z-index: 2;
+  margin-top:  rem(-35);
+
+}

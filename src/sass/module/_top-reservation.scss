@@ -1,0 +1,68 @@
+@use 'global' as *;
+
+
+
+.top-reservation{
+  padding-top:  rem(120);
+  padding-bottom:  rem(120);
+  position: relative;
+}
+
+
+.top-reservation::after{
+  background-image: url(../images/common/top-reservation-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  display: block;  
+  position: absolute;
+  width:  100%;
+  height:  100%;
+  left:  0;
+  top: 0;
+}
+
+
+.top-reservation__inner {
+
+}
+
+.top-reservation__wrapper {
+  background: rgba(255, 255, 255, 0.74);
+  padding-top:  rem(106);
+  padding-bottom:  rem(100);
+  padding-left:  rem(153);
+  padding-right:  rem(214);
+  display: flex;
+  gap:  rem(170);
+  position:relative; 
+  z-index:2;
+
+  @include mq("md"){
+   flex-direction: column;
+  }
+}
+
+.top-reservation__section-header {
+
+}
+
+
+.top-reservation__text-wrapper {
+
+}
+
+.top-reservation__text {
+  color: #333;
+  font-family: "Noto Sans JP";
+  font-size:  rem(18);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing:  rem(0.72);
+  margin-top:  rem(30);
+}
+
+.top-reservation__btn {
+margin-top:  rem(54);
+}

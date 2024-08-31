@@ -1,0 +1,40 @@
+@use 'global' as *;
+
+
+/* ベーススタイル */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size:  rem(16);
+}
+
+/* テーブルヘッダーのスタイル */
+.schedule-table__header {
+  border-bottom:  rem(1) solid #fff;
+}
+
+.schedule-table__header th {
+  padding: 10px;
+  text-align: center;
+  font-weight: normal;
+}
+
+/* テーブルの行のスタイル */
+.schedule-table__hours {
+  border-bottom:  rem(1) solid #fff;
+}
+
+
+
+/* 各セルのスタイル */
+.schedule-table__time {
+  padding:  rem(16);
+  text-align: center;
+  color: #FFF;
+  font-family: "Noto Sans JP";
+  font-size:  rem(16);
+  font-style: normal;
+  font-weight: 350;
+  line-height: normal;
+}
+
